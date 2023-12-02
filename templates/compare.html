@@ -88,7 +88,7 @@ align-items: center;
         <h1 id="info-message" class="infocompare">Список порожній</h1>
     {% endif %}
     
-       
+       {% if search_results.gpu %}
           {% with gpu_items=search_results.gpu %}
 
           <table class="tablecomp" id="table_gpu">
@@ -209,7 +209,9 @@ align-items: center;
 
           </table> 
           {% endwith %}
-
+        {% endif %}
+        
+        {% if search_results.cpu %}
           {% with cpu_items=search_results.cpu %}
 
           <table class="tablecomp" id="table_cpu">
@@ -331,6 +333,7 @@ align-items: center;
 
           </table> 
           {% endwith %}
+        {% endif %}
 
           {% if table_list %}
             <!-- Ось ваша поточна логіка для відображення таблиць і кнопок -->
