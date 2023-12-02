@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load media %}
+
+    <meta charset="UTF-8">
+    <title>Єдовідник</title> 
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var users = JSON.parse(localStorage.getItem('users')) || [];
+
+        function showLoginForm() {
+            $('.login').fadeIn();
+            $('.registration').fadeOut();
+        }
+
+        function showRegistrationForm() {
+            $('.login').fadeOut();
+            $('.registration').fadeIn();
+        }
+
+        function validateForm() {
+            var password = $('.registration input[type="password"]').val();
+            var confirmPassword = $('.registration input[name="confirmPassword"]').val();
+            var login = $('.registration input[name="login"]').val();
+            var email = $('.registration input[name="email"]').val();
+            var birthdate = $('.registration input[name="birthdate"]').val();
+            
+            if (!login || !password || !confirmPassword || !email || !birthdate) {
+                alert("Будь ласка, заповніть всі обов'язкові поля.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Паролі не співпадають.");
+                return false;
+            }
+
+            if (!isValidEmail(email)) {
+                alert("Введіть коректну адресу електронної пошти.");
+                return false;
+            }
+
+            if (!isValidPassword(password)) {
+                alert("Пароль повинен містити не менше 8 символів, літери верхнього і нижнього регістру, а також спеціальний символ.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function isValidPassword(password) {
+            // Перевірка, чи пароль відповідає вимогам
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return passwordPattern.test(password);
+        }
+
+        function registerUser() {
+            var user = {
+                login: $('.registration input[name="login"]').val(),
+                password: $('.registration input[type="password"]').val(),
+                email: $('.registration input[name="email"]').val(),
+                birthdate: $('.registration input[name="birthdate"]').val()
+            };
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+            alert("Користувач зареєстрований!");
+        }
+
+        function loginUser() {
+            var login = $('.login input[name="login"]').val();
+            var password = $('.login input[type="password"]').val();
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].login === login && users[i].password === password) {
+                    window.location.href = "main.html";
+                    return;
+                }
+            }
+            alert("Неправильний логін або пароль.");
+        }
+
+        $(document).ready(function() {
+            $('input').focus(function() {
+                $(this).css('background-color', '#cccccc');
+            }).blur(function() {
+                $(this).css('background-color', '#ffffff');
+            });
+
+            $('button.smallbtn').click(function() {
+                $(this).toggleClass('active');
+            });
+
+            $('.registration button[type="submit"]').click(function(e) {
+                e.preventDefault();
+                if (validateForm()) {
+                    registerUser();
+                }
+            });
+
+
+            $('.login button[type="submit"]').click(function(e) {
+                e.preventDefault();
+                loginUser();
+            });
+        });
+    </script>
+</head>
+<body class="logform">
+    <main>
+        <form class="inputform">
+            <button type="button" class="smallbtn" onclick="showLoginForm()">Вхід</button>
+            <button type="button" class="smallbtn" onclick="showRegistrationForm()">Реєстрація</button>
+
+            <div class="login">
+                <label>Логін</label>
+                <input type="text" name="login">
+                <label>Пароль</label>
+                <input type="password" name="password">
+                <button class="bigbtn" type="submit">Увійти</button>
+                <label class="smalltext">Забули пароль?</label>
+            </div>
+            
+            <div class="registration" style="display: none;">
+                <label>Логін</label>
+                <input type="text" name="login">
+                <label>Пароль</label>
+                <input type="password" name="password">
+                <label>Підтвердіть пароль</label>
+                <input type="password" name="confirmPassword">
+                <label>Електронна адреса</label>
+                <input type="text" name="email">
+                <label>Дата народження</label>
+                <input type="date" name="birthdate">
+                <button class="bigbtn" type="submit">Зареєструватися</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
