@@ -1,0 +1,159 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Єдовідник</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function showLoginForm() {
+            $('.login').fadeIn();
+            $('.registration').fadeOut();
+        }
+    
+        function showRegistrationForm() {
+            $('.login').fadeOut();
+            $('.registration').fadeIn();
+        }
+    
+        $(document).ready(function () {
+            $('input').focus(function () {
+                $(this).css('background-color', '#cccccc');
+            }).blur(function () {
+                $(this).css('background-color', '#ffffff');
+            });
+    
+            $('button.smallbtn').click(function () {
+                $(this).toggleClass('active');
+            });
+    
+            $('.registration button[type="button"]').click(function (e) {
+                validateAndSubmitForm();
+            });
+    
+            $('.login button[type="submit"]').click(function (e) {
+                // Handle login form submission here if needed
+            });
+        });
+    
+        function validateAndSubmitForm() {
+            if (validateForm()) {
+                document.getElementById('registration-form').submit();
+            }
+        }
+    
+        function validateForm() {
+            var password = $('.registration input[type="password"]').val();
+            var confirmPassword = $('.registration input[name="confirmPassword"]').val();
+            var login = $('.registration input[name="login"]').val();
+            var email = $('.registration input[name="email"]').val();
+            var birthdate = $('.registration input[name="birthdate"]').val();
+    
+            if (!login || !password || !confirmPassword || !email || !birthdate) {
+                alert("Будь ласка, заповніть всі обов'язкові поля.");
+                return false;
+            }
+    
+            if (password !== confirmPassword) {
+                alert("Паролі не співпадають.");
+                return false;
+            }
+    
+            if (!isValidEmail(email)) {
+                alert("Введіть коректну адресу електронної пошти.");
+                return false;
+            }
+    
+            if (!isValidPassword(password)) {
+                alert("Пароль повинен містити не менше 8 символів, літери верхнього і нижнього регістру, а також спеціальний символ.");
+                return false;
+            }
+    
+            return true;
+        }
+    
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+    
+        function isValidPassword(password) {
+            // Password pattern for validation
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return passwordPattern.test(password);
+        }
+    
+        function togglePasswordVisibility(id) {
+            var passwordInput = document.getElementById(id);
+            var passwordButton = document.querySelector(`button[data-toggle="${id}"]`);
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordButton.textContent = "👁️";
+            } else {
+                passwordInput.type = "password";
+                passwordButton.textContent = "👁";
+            }
+        }
+    </script>
+    
+    <style>
+        /* Ваш CSS код */
+
+        /* Додатковий CSS для кнопки "Показати пароль" */
+        .password-field {
+            position: relative;
+        }
+
+       
+
+        .password-field button {
+            position: absolute;
+            right: 0;
+            top: 35%;
+            left: 135px;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="logform">
+    <main>
+       
+        <form class="inputform" action="/login/" method="post">
+            {% csrf_token %}
+            <a href="/login" class="smallbtn" style="  border-radius: 100px;
+            border: 1px solid #000;
+            background: #f0f0f0;  text-align: center; color:#000">Вхід</a>
+        <a href="/register"style="  border-radius: 100px;
+        border: 1px solid #000;
+        background: #f0f0f0;  text-align: center; color:#000" class="smallbtn">Реєстрація</a>
+
+            <div class="login">
+                <label>Логін</label>
+                <input type="text" name="login">
+                <label>Пароль</label>
+                <div class="password-field">
+                    <input type="password" id="loginPassword" name="password">
+                    <button type="button" data-toggle="loginPassword" onclick="togglePasswordVisibility('loginPassword')">👁</button>
+                </div>
+                <button class="bigbtn" type="submit">Увійти</button>
+            </div>
+        </form>
+        
+        <div class="error-message">
+            {% if error_message %}
+            <script>
+                alert("Неправильний логін або пароль");
+            </script>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>

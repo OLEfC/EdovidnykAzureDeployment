@@ -1,0 +1,1003 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Єдовідник</title> 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.css" rel="stylesheet">
+    <style>
+        #slider {
+            width: 240px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: #F9EEEB;
+            border-radius: 40px;
+        }
+        #slider2 {
+            width: 240px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: #F9EEEB;
+            border-radius: 40px;
+        }
+        #slider3 {
+            width: 240px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: #F9EEEB;
+            border-radius: 40px;
+        }
+
+        #slider4 {
+            width: 240px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: #F9EEEB;
+            border-radius: 40px;
+        }
+
+        #slider5 {
+            width: 240px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: #F9EEEB;
+            border-radius: 40px;
+        }
+       
+       
+        .slider-inputs input {
+            width: 50px;
+            margin: 0 10px;
+        }
+        .noUi-handle {
+            border-radius: 50%;
+            background-color: #A65A83;
+
+            
+        }
+        .noUi-connect {
+            background-color: #A65A83;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            opacity: 1;
+        }
+        main{
+            display: flex;
+
+        }
+
+    </style>
+
+
+    
+</head>
+<body class="search" >
+
+    
+
+    
+    <header>
+        <div class="headnav">
+            <nav>
+                <ul class="leftnav">
+                    <li class="leftnavpos"> <a href="/main">Головна</a></li>
+                    <li><a href="/wishlist">Wishlist</a></li>
+                    <li><a href="/compare">Порівняння</a></li>
+                    <li><a href="/shop">Магазин</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                </ul>
+                <ul class="rightnav">
+                    <li><img src="{% static 'ukr.png' %}" alt=""></li>
+                    <li><img src="{% static 'eng.png' %}" alt=""></li>
+                    <li><a href="/usereditprofile"><img src="{% static 'user.png' %}" alt=""></a></li>
+                </ul>
+            </nav>
+    </header>
+
+
+    
+    
+    <main>
+
+        <div class="leftmenu">
+            <h1 class="searchtitle">
+                Характеристики
+            </h1>
+
+            <div class="dropdown-menu">
+                <h2 class="subtitle">Виробник</h2>
+                <form  action="">
+
+                    <select class="dropdownitem" name="name" id="manufacturer">
+
+                        <option value="1">Asus</option>
+                        <option value="2">Gigabyte</option>
+                        <option value="2">Inno3D</option>
+                        <option value="2">MSI</option>
+
+
+                  
+                      
+                    </select>
+                </form>
+
+
+            </div>
+
+            <div class="checkboxes">
+                    <h2 сlass="subtitle">
+                         Модель відеокарти
+                    </h2>
+                    <form >
+                        
+                        <div class="checkboxesmenu">
+                            <input  type="checkbox" id="textcheck1" name="textcheck1" value="Bike">
+                            <label for="textcheck1"> GeForse GT710</label><br>
+
+                        </div>
+                        <div class="checkboxesmenu">
+                            <input type="checkbox" id="textcheck2" name="textcheck2" value="Car">
+                            <label  for="textcheck2">GeForse GTX1650</label><br>
+
+                        </div>
+                        <div class="checkboxesmenu">
+                            <input type="checkbox" id="textcheck3" name="textcheck3" value="Boat">
+                            <label for="textcheck3">GeForse GTX1650 Ti</label><br>
+                        </div>
+                        <div class="checkboxesmenu">
+                            
+                            <input type="checkbox" id="textcheck4" name="textcheck4" value="Boat">
+                            <label for="textcheck4">GeForse GTX1660</label> <br>
+
+                        </div>
+                    </div>
+                    <div class="checkboxesmenu" id="extraMemoryTypeCheck1" style="display: none;">
+                        <input type="checkbox" id="memoryTypeCheck3" name="memoryTypeCheck3" value="Boat">
+                        <label  for="memoryTypeCheck3">Extra 1</label><br>
+                    </div>
+                    <div class="checkboxesmenu" id="extraMemoryTypeCheck2" style="display: none;">
+                        <input type="checkbox" id="memoryTypeCheck4" name="memoryTypeCheck4" value="Boat">
+                        <label  for="memoryTypeCheck4">Extra 2</label><br>
+                    </div>
+                    <div class="checkboxesmenu" id="extraMemoryTypeCheck3" style="display: none;">
+                        <input type="checkbox" id="memoryTypeCheck5" name="memoryTypeCheck5" value="Boat">
+                        <label  for="memoryTypeCheck5">Extra 3</label><br>
+                    </div>
+                    <button  id="toggleMemoryTypeButton1">Показати ще</button>
+
+                       
+                        
+                       
+                <div class="checkboxes">
+                    <h2 сlass="subtitle">
+                         Тип відеокарти
+                    </h2>
+                    <form >
+                        
+                        <div class="checkboxesmenu">
+                            <input  type="checkbox" id="textcheck1" name="textcheck1" value="Bike">
+                            <label for="textcheck1"> Дискретна</label><br>
+
+                        </div>
+                        <div class="checkboxesmenu">
+                            <input type="checkbox" id="textcheck2" name="textcheck2" value="Car">
+                            <label  for="textcheck2">Інтегрована</label><br>
+
+                        </div>
+
+            
+                       
+                    </form>
+
+                </div>
+            <div>
+                
+                <h2 class="subtitle" style="margin-left: 34px;">Кількість ядер</h2>
+
+                <div id="slider"></div>
+
+                <div class="slider-inputs">
+                    <input type="number" id="input-left" step="1" min="2" max="12" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                    <input type="number" id="input-right" min="2" max="12" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+                <script>
+                    var slider = document.getElementById('slider');
+                    var inputLeft = document.getElementById('input-left');
+                    var inputRight = document.getElementById('input-right');
+                    var step = 1; // Change this value to set the step
+
+                    noUiSlider.create(slider, {
+                        start: [2, 12],
+                        connect: true,
+                        range: {
+                            'min': 2,
+                            'max': 12
+                        },
+                        step: step
+                    });
+
+                    slider.noUiSlider.on('update', function (values, handle) {
+                        var value = values[handle];
+                        if (handle) {
+                            inputRight.value = parseInt(value) ;
+                        } else {
+                            inputLeft.value = parseInt(value);
+                        }
+                    });
+
+                    inputLeft.addEventListener('change', function () {
+                        var value = this.value;
+                        slider.noUiSlider.set([value, null]);
+                    });
+
+                    inputRight.addEventListener('change', function () {
+                        var value = this.value;
+                        slider.noUiSlider.set([null, value]);
+                    });
+                </script>
+
+            </div>
+           
+
+
+            <div>
+                
+                <h2 class="subtitle" style="margin-left: 34px;">Кількість потоків</h2>
+
+                <div id="slider2"></div>
+
+                <div class="slider-inputs">
+                    <input type="number" id="input-left2" step="1" min="2" max="24" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                    <input type="number" id="input-right2" min="2" max="24" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+                <script>
+                    var slider2 = document.getElementById('slider2');
+                    var inputLeft2 = document.getElementById('input-left2');
+                    var inputRight2 = document.getElementById('input-right2');
+                    var step = 1; // Change this value to set the step
+
+                    noUiSlider.create(slider2, {
+                        start: [2, 24],
+                        connect: true,
+                        range: {
+                            'min': 2,
+                            'max': 24
+                        },
+                        step: step
+                    });
+
+                    slider2.noUiSlider.on('update', function (values, handle) {
+                        var value = values[handle];
+                        if (handle) {
+                            inputRight2.value = parseInt(value) ;
+                        } else {
+                            inputLeft2.value = parseInt(value);
+                        }
+                    });
+
+                    inputLeft.addEventListener('change', function () {
+                        var value = this.value;
+                        slider2.noUiSlider.set([value, null]);
+                    });
+
+                    inputRight.addEventListener('change', function () {
+                        var value = this.value;
+                        slider2.noUiSlider.set([null, value]);
+                    });
+                </script>
+
+            </div>
+           
+
+
+            
+
+
+            <div>
+                
+                <h2 class="subtitle" style="margin-left: 34px;">Тактова частота  ГГц</h2>
+
+                <div id="slider3"></div>
+
+                <div class="slider-inputs">
+                    <input type="number" id="input-left3" step="0.1" min="1.8" max="5" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                    <input type="number" id="input-right3" step="0.1" min="1.8" max="5" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+                <script>
+                    var slider3 = document.getElementById('slider3');
+                    var inputLeft3 = document.getElementById('input-left3');
+                    var inputRight3 = document.getElementById('input-right3');
+                    var step = 0.1; // Change this value to set the step
+
+                    noUiSlider.create(slider3, {
+                        start: [1.8, 5],
+                        connect: true,
+                        range: {
+                            'min': 1.8,
+                            'max': 5
+                        },
+                        step: step
+                    });
+
+                    slider3.noUiSlider.on('update', function (values, handle) {
+                        var value = values[handle];
+                        if (handle) {
+                            inputRight3.value = (value) ;
+                        } else {
+                            inputLeft3.value = (value);
+                        }
+                    });
+
+                    inputLeft.addEventListener('change', function () {
+                        var value = this.value;
+                        slider3.noUiSlider.set([value, null]);
+                    });
+
+                    inputRight.addEventListener('change', function () {
+                        var value = this.value;
+                        slider3.noUiSlider.set([null, value]);
+                    });
+                </script>
+
+
+            </div>
+
+            <div class="checkboxes">
+                <h2 сlass="subtitle">
+                    Тип відеопам'яті
+                </h2>
+                <form >
+                    
+                    <div class="checkboxesmenu">
+                        <input  type="checkbox" id="textcheck5" name="textcheck5" value="Bike">
+                        <label for="textcheck5"> DDR5</label><br>
+
+                    </div>
+                    <div class="checkboxesmenu">
+                        <input type="checkbox" id="textcheck6" name="textcheck6" value="Car">
+                        <label  for="textcheck6">GDDR3</label><br>
+
+                    </div>
+                    <div class="checkboxesmenu">
+                        <input type="checkbox" id="textcheck7" name="textcheck7" value="Boat">
+                        <label for="textcheck7">GDDR5</label><br>
+                    </div>
+                   
+                </div>
+                <div class="checkboxesmenu" id="extraMemoryTypeCheck7" style="display: none;">
+                    <input type="checkbox" id="memoryTypeCheck7" name="memoryTypeCheck7" value="Boat">
+                    <label  for="memoryTypeCheck7">Extra 7</label><br>
+                </div>
+                <div class="checkboxesmenu" id="extraMemoryTypeCheck8" style="display: none;">
+                    <input type="checkbox" id="memoryTypeCheck8" name="memoryTypeCheck8" value="Boat">
+                    <label  for="memoryTypeCheck8">Extra 8</label><br>
+                </div>
+                <div class="checkboxesmenu" id="extraMemoryTypeCheck6" style="display: none;">
+                    <input type="checkbox" id="memoryTypeCheck6" name="memoryTypeCheck6" value="Boat">
+                    <label  for="memoryTypeCheck6">Extra 6</label><br>
+                </div>
+                <button  id="toggleMemoryTypeButton2">Показати ще</button>
+
+                   
+            <div>
+                
+                <h2 class="subtitle" style="margin-left: 34px;">Обсяг віеопам'яті</h2>
+
+                <div id="slider4"></div>
+
+                <div class="slider-inputs">
+                    <input type="number" id="input-left4" step="1" min="2" max="14" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                    <input type="number" id="input-right4" min="2" max="14" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+                <script>
+                    var slider4 = document.getElementById('slider4');
+                    var inputLeft4 = document.getElementById('input-left4');
+                    var inputRight4 = document.getElementById('input-right4');
+                    var step = 1; // Change this value to set the step
+
+                    noUiSlider.create(slider4, {
+                        start: [2, 14],
+                        connect: true,
+                        range: {
+                            'min': 2,
+                            'max': 14
+                        },
+                        step: step
+                    });
+
+                    slider4.noUiSlider.on('update', function (values, handle) {
+                        var value = values[handle];
+                        if (handle) {
+                            inputRight4.value = parseInt(value) ;
+                        } else {
+                            inputLeft4.value = parseInt(value);
+                        }
+                    });
+
+                    inputLeft.addEventListener('change', function () {
+                        var value = this.value;
+                        slider4.noUiSlider.set([value, null]);
+                    });
+
+                    inputRight.addEventListener('change', function () {
+                        var value = this.value;
+                        slider4.noUiSlider.set([null, value]);
+                    });
+                </script>
+
+            </div>
+
+             <div>
+                
+                <h2 class="subtitle" style="margin-left: 34px;">Розрядність шини</h2>
+
+                <div id="slider5"></div>
+
+                <div class="slider-inputs">
+                    <input type="number" id="input-left5" step="1" min="70" max="200" style="margin-left: 20px; margin-top: 20px;text-align: center;">
+                    <input type="number" id="input-right5" min="70" max="200" style="margin-left: 110px; margin-top: 20px; text-align: center;">
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/nouislider@14/distribute/nouislider.min.js"></script>
+                <script>
+                    var slider5 = document.getElementById('slider5');
+                    var inputLeft5 = document.getElementById('input-left5');
+                    var inputRight5 = document.getElementById('input-right5');
+                    var step = 1; // Change this value to set the step
+
+                    noUiSlider.create(slider5, {
+                        start: [70, 200],
+                        connect: true,
+                        range: {
+                            'min': 70,
+                            'max': 200
+                        },
+                        step: step
+                    });
+
+                    slider5.noUiSlider.on('update', function (values, handle) {
+                        var value = values[handle];
+                        if (handle) {
+                            inputRight5.value = parseInt(value) ;
+                        } else {
+                            inputLeft5.value = parseInt(value);
+                        }
+                    });
+
+                    inputLeft5.addEventListener('change', function () {
+                        var value = this.value;
+                        slider5.noUiSlider.set([value, null]);
+                    });
+
+                    inputRight5.addEventListener('change', function () {
+                        var value = this.value;
+                        slider5.noUiSlider.set([null, value]);
+                    });
+                </script>
+
+            </div>
+
+            <div class="checkboxes">
+                <h2 сlass="subtitle">
+                    Підтримувані технології
+                </h2>
+                <form >
+                    
+                    <div class="checkboxesmenu">
+                        <input  type="checkbox" id="textcheck5" name="textcheck5" value="Bike">
+                        <label for="textcheck5"> Підтримка VR</label><br>
+
+                    </div>
+                    <div class="checkboxesmenu">
+                        <input type="checkbox" id="textcheck6" name="textcheck6" value="Car">
+                        <label  for="textcheck6">Підтримка DirectX 12</label><br>
+
+                    </div>
+                    <div class="checkboxesmenu">
+                        <input type="checkbox" id="textcheck7" name="textcheck7" value="Boat">
+                        <label for="textcheck7">Підтримка Ultra HD 4k</label><br>
+                    </div>
+                   
+                </div>
+                <div class="checkboxesmenu" id="extraMemoryTypeCheck9" style="display: none;">
+                    <input type="checkbox" id="memoryTypeCheck9" name="memoryTypeCheck9" value="Boat">
+                    <label  for="memoryTypeCheck9">Extra 9</label><br>
+                </div>
+                <div class="checkboxesmenu" id="extraMemoryTypeCheck10" style="display: none;">
+                    <input type="checkbox" id="memoryTypeCheck10" name="memoryTypeCheck10" value="Boat">
+                    <label  for="memoryTypeCheck10">Extra 10</label><br>
+                </div>
+                <div class="checkboxesmenu" id="extraMemoryTypeCheck11" style="display: none;">
+                    <input type="checkbox" id="memoryTypeCheck11" name="memoryTypeCheck11" value="Boat">
+                    <label  for="memoryTypeCheck11">Extra 11</label><br>
+                </div>
+                <button  id="toggleMemoryTypeButton3">Показати ще</button>
+
+                   
+                    
+                   
+                </form>
+
+            
+            <div class="checkboxes">
+                <h2 сlass="subtitle">
+                    Підтримувані інтерфейси
+                </h2>
+                <form >
+                    
+                    <div class="checkboxesmenu">
+                        <input  type="checkbox" id="textcheck5" name="textcheck5" value="Bike">
+                        <label for="textcheck5"> PCI-E v.3.0</label><br>
+
+                    </div>
+                    <div class="checkboxesmenu">
+                        <input type="checkbox" id="textcheck6" name="textcheck6" value="Car">
+                        <label  for="textcheck6">PCI-E v.4.0</label><br>
+
+                    </div>
+                    
+
+                   
+                    
+                   
+                </form>
+
+            </div>
+
+            <button class="searchsubmit">Підібрати</button>
+                    </form>
+
+                </div>
+                    
+                   
+                </form>
+
+            </div>
+
+           
+
+
+           
+
+           
+
+        
+            
+
+
+
+        </div>
+        <div class="rightmenu">
+            <h1 >Процесори</h1>
+            <div class="productgrid">
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+                <div class="frameprod">
+            
+                    <div class="mainphoto">
+                        <img src="note.png" alt="">
+            
+                    </div>
+                   
+                    <div class="maintext">
+                        <h3>
+                            Acer Nitro 5 AN515-45-R94Y
+                        </h3>
+    
+                    </div>
+                    <div class="">
+                        <img src="5.svg" alt="">
+                    </div>
+                    <div class="buttnprod">
+                        <img src="heart.svg" alt="">
+                        <img src="compare.svg" alt="">
+            
+                    </div>
+            
+                </div>
+
+
+                
+
+            </div>
+            
+
+            
+
+
+        </div>
+       
+    </main>
+    <div class="dropdown">
+        <button class="dropdown-btn">
+            Сортувати за
+            <span class="triangle"></span>
+        </button>
+        <div class="dropdown-content">
+            <a href="#">Популярністю</a>
+            <a href="#">За зростанням</a>
+            <a href="#">За спаданням</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggleMemoryTypeButton1 = document.getElementById('toggleMemoryTypeButton1');
+            var extraMemoryTypeChecks1 = ['extraMemoryTypeCheck1', 'extraMemoryTypeCheck2', 'extraMemoryTypeCheck3'];
+            var showMoreMemoryType1 = true;
+    
+            toggleMemoryTypeButton1.addEventListener('click', function(event) {
+                event.preventDefault();
+                for (var i = 0; i < extraMemoryTypeChecks1.length; i++) {
+                    var checkbox = document.getElementById(extraMemoryTypeChecks1[i]);
+                    checkbox.style.display = showMoreMemoryType1 ? 'block' : 'none';
+                }
+    
+                toggleMemoryTypeButton1.textContent = showMoreMemoryType1 ? 'Приховати' : 'Показати ще';
+                showMoreMemoryType1 = !showMoreMemoryType1;
+            });
+        });
+    </script>   
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggleMemoryTypeButton2 = document.getElementById('toggleMemoryTypeButton2');
+            var extraMemoryTypeChecks2 = ['extraMemoryTypeCheck7', 'extraMemoryTypeCheck8', 'extraMemoryTypeCheck6'];
+            var showMoreMemoryType2 = true;
+    
+            toggleMemoryTypeButton2.addEventListener('click', function(event) {
+                event.preventDefault();
+                for (var i = 0; i < extraMemoryTypeChecks2.length; i++) {
+                    var checkbox = document.getElementById(extraMemoryTypeChecks2[i]);
+                    checkbox.style.display = showMoreMemoryType2 ? 'block' : 'none';
+                }
+    
+                toggleMemoryTypeButton2.textContent = showMoreMemoryType2 ? 'Приховати' : 'Показати ще';
+                showMoreMemoryType2 = !showMoreMemoryType2;
+            });
+        });
+    </script>    
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var toggleMemoryTypeButton3 = document.getElementById('toggleMemoryTypeButton3');
+                var extraMemoryTypeChecks3 = ['extraMemoryTypeCheck9', 'extraMemoryTypeCheck10', 'extraMemoryTypeCheck11'];
+                var showMoreMemoryType3 = true;
+        
+                toggleMemoryTypeButton3.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    for (var i = 0; i < extraMemoryTypeChecks3.length; i++) {
+                        var checkbox = document.getElementById(extraMemoryTypeChecks3[i]);
+                        checkbox.style.display = showMoreMemoryType3 ? 'block' : 'none';
+                    }
+        
+                    toggleMemoryTypeButton3.textContent = showMoreMemoryType3 ? 'Приховати' : 'Показати ще';
+                    showMoreMemoryType3 = !showMoreMemoryType3;
+                });
+            });
+        </script>    
+        <script>
+            function generateJSON() {
+            // Отримайте дані з форми і створіть об'єкт JSON
+            var formData = {
+                manufacturer: document.getElementById('manufacturer').value,
+                // Додайте інші параметри відповідно
+            };
+
+            // Перетворіть об'єкт JSON в рядок
+            var jsonString = JSON.stringify(formData);
+
+            // Виведіть рядок JSON у консоль або збережіть його, якщо потрібно
+            console.log(jsonString);
+        }
+        </script>
+       
+      
+    
+</body>
+</html>

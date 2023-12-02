@@ -1,0 +1,172 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Єдовідник</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+   $(document).ready(function () {
+    var isFormValid = true; // Змінна для відстеження стану валідації форми
+
+    $('input').focus(function () {
+        $(this).css('background-color', '#cccccc');
+    }).blur(function () {
+        $(this).css('background-color', '#ffffff');
+    });
+
+    $('button.smallbtn').click(function () {
+        $(this).toggleClass('active');
+    });
+
+    $('#registration-form button[type="submit"]').click(function (e) {
+        e.preventDefault(); // Заборонити стандартне відправлення форми
+        isFormValid = validateAndSubmitForm('registration-form');
+        if (isFormValid) {
+            $('#registration-form').submit(); // Відправити форму реєстрації, якщо валідація пройшла успішно
+        }
+    });
+
+    $('.login button[type="submit"]').click(function (e) {
+        // Обробити відправлення форми входу тут, якщо потрібно
+    });
+});
+
+function validateAndSubmitForm(formId) {
+    resetErrors(); // Скинути стан помилок перед повторною перевіркою
+
+    if (validateForm(formId)) {
+        return true; // Повернути true для позначення успішної валідації
+    }
+    return false; // Повернути false для позначення невдалої валідації
+}
+
+function resetErrors() {
+    // Очистити всі повідомлення про помилки
+    $('.error-message').remove();
+}
+
+function validateForm(formId) {
+    var form = $('#' + formId);
+    var password = form.find('input[type="password"]').val();
+    var confirmPassword = form.find('input[name="confirmPassword"]').val();
+    var login = form.find('input[name="login"]').val();
+    var email = form.find('input[name="email"]').val();
+    
+
+    if (password !== confirmPassword) {
+        displayErrorMessage('Паролі не співпадають.');
+        return false;
+    }
+     if (login.trim() === "") {
+        displayErrorMessage('Поле "Логін" не може бути порожнім.');
+        return false;
+    }
+
+
+    if (!isValidEmail(email)) {
+        displayErrorMessage('Введіть коректну адресу електронної пошти.');
+        return false;
+    }
+
+    if (!isValidPassword(password)) {
+        displayErrorMessage('Пароль повинен містити не менше 8 символів, літери верхнього і нижнього регістру, а також спеціальний символ.');
+        return false;
+    }
+
+    return true;
+}
+
+function displayErrorMessage(message) {
+    // Вивести повідомлення про помилку
+    alert(message);
+}
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPassword(password) {
+    // Паттерн пароля для валідації
+    var passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordPattern.test(password);
+}
+
+function togglePasswordVisibility(id) {
+    var passwordInput = document.getElementById(id);
+    var passwordButton = document.querySelector(`button[data-toggle="${id}"]`);
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        passwordButton.textContent = "👁️";
+    } else {
+        passwordInput.type = "password";
+        passwordButton.textContent = "👁";
+    }
+}
+
+        </script>
+        
+    
+    <style>
+        /* Ваш CSS код */
+
+        /* Додатковий CSS для кнопки "Показати пароль" */
+        .password-field {
+            position: relative;
+        }
+
+       
+
+        .password-field button {
+            position: absolute;
+            right: 0;
+            top: 35%;
+            left: 135px;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="logform">
+    <main>
+        
+        <form class="inputform" action="/register/" method="post" id="registration-form">
+            {% csrf_token %}
+
+            <a href="/login"style="  border-radius: 100px;
+            border: 1px solid #000;
+            background: #f0f0f0;  text-align: center; color:#000" class="smallbtn">Вхід</a>
+            <a href="/register" style="  border-radius: 100px;
+            border: 1px solid #000;
+            background: #f0f0f0;  text-align: center; color:#000"class="smallbtn">Реєстрація</a>
+
+            <div class="registration">
+                <label>Логін</label>
+                <input type="text" name="login">
+                <label>Пароль</label>
+                <div class="password-field">
+                    <input type="password" id="registrationPassword" name="password">
+                    <button type="button" data-toggle="registrationPassword" onclick="togglePasswordVisibility('registrationPassword')">👁</button>
+                </div>
+                <label>Підтвердіть пароль</label>
+                <div class="password-field">
+                    <input type="password" id="confirmPassword" name="confirmPassword">
+                    <button type="button" data-toggle="confirmPassword" onclick="togglePasswordVisibility('confirmPassword')">👁</button>
+                </div>
+                <label>Електронна адреса</label>
+                <input type="text" name="email">
+                
+                <button class="bigbtn" type="submit">Зареєструватися</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
