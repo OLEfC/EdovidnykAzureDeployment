@@ -134,6 +134,10 @@ USE_TZ = True
 # settings.py
 
 STATIC_URL = '/static/'
+# settings.py
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
