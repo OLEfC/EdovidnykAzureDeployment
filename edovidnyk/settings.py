@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$xh9-m!%t8f*1va&x)pd-i0kua)stkp81n(zw8tzaniny(9em)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['edovidnyk.azurewebsites.net']
-
 
 # Application definition
 
@@ -46,6 +45,7 @@ INSTALLED_APPS = [
     'faq',
     'product',
     'compare',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
 
@@ -84,18 +85,16 @@ WSGI_APPLICATION = 'edovidnyk.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # settings.py
-# settings.py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'edovidnyk',
-        'USER': 'edovidnyk',
-        'PASSWORD': 'Coursework@1',
-        'HOST': 'edovidnyk.mysql.database.azure.com',  # Адреса сервера баз даних (зазвичай localhost)
+        'USER': 'root',
+        'PASSWORD': '9415',
+        'HOST': 'localhost',  # Адреса сервера баз даних (зазвичай localhost)
         'PORT': '3306',       # Порт сервера баз даних (зазвичай 3306)
     }
 }
-
 
 
 
@@ -132,8 +131,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+# settings.py
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
