@@ -88,7 +88,7 @@ def find_table_names_by_idpages(idpages):
 
 from django.shortcuts import redirect
 from django.views.decorators.http import require_POST
-
+@csrf_exempt
 @require_POST
 def delete_item(request, item_id):
     user = request.user.id
@@ -103,7 +103,7 @@ def delete_item(request, item_id):
 
     return redirect('/wishlist')
 
-
+@csrf_exempt
 @require_POST
 def delete_all(request):
     user = request.user.id
