@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
 
 from django.db import connection
 
