@@ -1,1 +1,7 @@
-# EdovidnykAzureDeployment
+# Інструкція для запуску проекту на Django
+## 1 Створити віртуальне средовище venv і запустити його https://docs.python.org/uk/3/library/venv.html
+## 2 Встановити усі необхідні бібліотеки за допомогою команди:
+```pip install -r requirements.txt```
+## 3 Запустити Локальний веб-сервер за допомогою команди:
+```py manahe.py runserver```
+## 4 Перейти за посиланням http://127.0.0.1:8000
