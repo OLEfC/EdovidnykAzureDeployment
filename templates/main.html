@@ -97,31 +97,30 @@
         {% endfor %} 
 
 
-        <div class="productlist">
-            <div class="popular">
-                <h2 class="textprod" style="text-align: center; width: 100%;">Популярні товари</h2>
-                <div class="twoproduct" style="display: flex;">
-                     
-                {% for result in popular_results %}
-
-                
-                <div class="product">
-                    <div class="photoproddiv" style="display: flex; align-items: center; justify-content: center;">
-                        <img class="photoprod" src="{{result.2}}" alt="">
+        <div class="productlist" style="width: 100%;">
+            <div class="popular" style="width: 100%;">
+                <h2 class="textprod" style="text-align: center;">Популярні товари</h2>
+                <div class="twoproduct" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+        
+                    {% for result in popular_results %}
+        
+                    <div class="product">
+                        <div class="photoproddiv" style="display: flex; align-items: center; justify-content: center;">
+                            <img class="photoprod" src="{{result.2}}" alt="">
+                        </div>
+                        <a href="/product/{{result.3}}"><p class="textprod">{{result.0}}</p></a>
+        
+                        <a href="/product/{{result.3}}/addtocomparelist"><img class="prodbutton" src="{% static 'compare.svg' %}" alt=""></a>
+                        <a href="/product/{{result.3}}/addtowishlist"><img class="prodbutton" src="{% static 'heart.svg' %}" alt=""></a>
+        
                     </div>
-                    <a href="/product/{{result.3}}"><p class="textprod">{{result.0}}</p></a>
-
-                    <a href="/product/{{result.3}}/addtocomparelist"><img class="prodbutton" src="{% static 'compare.svg' %}" alt=""></a>
-                    <a href="/product/{{result.3}}/addtowishlist"><img class="prodbutton" src="{% static 'heart.svg' %}" alt=""></a>
-                    
-                </div>
-           
-                {% endfor %} 
-                   
-                    
+        
+                    {% endfor %}
+        
                 </div>
             </div>
-
+        </div>
+        
 
 
            
