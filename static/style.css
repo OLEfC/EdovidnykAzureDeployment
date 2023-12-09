@@ -65,10 +65,8 @@ body {
   background: #A65A83;
   margin-left: 22%;
   width: 55%;
-  transform: translateY(-200px);
   margin-bottom: 0px;
   align-items: center;
- margin-top: 100px;
 
 }
 #toggleButton5 {
@@ -77,7 +75,6 @@ body {
   border-radius: 50px;
   background: #A65A83;
   margin-left: 22%;
-  margin-top: 170px;
   margin-bottom: 1px;
   width: 55%;
   
@@ -88,10 +85,8 @@ body {
 }
 
 .moved-up {
-  transform: translateY(-130px);
 }
 .moved-up1 {
-  transform: translateY(-130px);
   margin:30px;
 }
 
@@ -143,9 +138,9 @@ body {
 }
 
 .searchnav {
-    flex-shrink: 0;
     background-color: #FFCFB2;
     align-items: center;
+    width: 100%;
     
 }
 
@@ -942,8 +937,6 @@ margin: 0;
 
 .buttncontainer{
   position: relative;
-  left: 120px;
-  top: 20px;
 }
 /* Center the imgslide images within their blocks */
 .mySlides {
@@ -961,7 +954,6 @@ margin: 0;
   max-height: 100%; /* Change max-height to 100% */
   max-width: 100%; /* Change max-width to 100% */
   display: block;
-  margin: auto;
   position: absolute; /* Add this line */
   top: 50%; /* Add this line */
   left: 50%; /* Add this line */
@@ -971,9 +963,13 @@ margin: 0;
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
+.image_container_{
+  display: flex;
+  width: 40%;
 
+}
 /* Hide the images by default */
 
 
@@ -1040,8 +1036,7 @@ margin: 0;
   display: flex;
  flex-direction: column;
  position: relative;
- left: 10px;
- bottom: 440px;
+
 }
 
 /* Six columns side by side */
@@ -1070,7 +1065,6 @@ margin: 0;
   opacity: 1;
 }
 
-
 .iteminfo{
   width: 50%;
   position: absolute;
@@ -1082,33 +1076,50 @@ margin: 0;
   margin-left:250px ;
 
 }
-.storeitem{
-  width: 180px;
+
+.iteminfo_page{
+  width: 60%;
+  text-align: center;
+
+}
+.iteminfo_page h2{
+
+}
+.first_line{
+  display: flex;
+}
+.storelist {
+  display: flex;
+  justify-content: center; /* Центрує елементи відносно головного контейнера */
+  width: 100%;
+}
+
+.storeitem {
+  width: 150px; /* Зменшено ширину */
   height: 37px;
-  font-size: 32px;
+  font-size: 30px; /* Зменшено розмір шрифту */
   border-radius: 50px;
   background: #FFF4CE;
   text-align: center;
-  margin: 10px;
-  
+  margin: 10px auto; /* Змінено margin для автоматичного центрування */
 }
 
 .addwishlist{
-  width: 540px;
+  align-items: center;
+  width: 80%;
   height: 37px;
   font-size: 32px;
   border-radius: 50px;
   background: #A65A83;;
   text-align: center;
-  margin-left: 80px;
   margin-top: 50px;
+  padding-top: 10px;
+
+  padding-bottom: 40px;
 
 
 }
-.storelist{
-  display: flex;
 
-}
 .maininfoitem{
   font-size: 20px;
   display: flex;
@@ -1139,14 +1150,12 @@ margin: 0;
 }
 
 .maininfolistcpu{
-  position: relative;
-  bottom: 130px;
+
 }
 
 .headerinfocpu{
   font-size: 40px;
-  position: relative;
-  bottom: 150px;
+margin-top: 0px;
   text-align: center;
 }
 .headerinfo{
