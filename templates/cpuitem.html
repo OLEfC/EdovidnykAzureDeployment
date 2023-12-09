@@ -22,13 +22,30 @@
                 <li><a href="/faq">FAQ</a></li>
             </ul>
             <ul class="rightnav">
-                <li><img src="{% static 'ukr.png' %}" alt=""></li>
-                <li><img src="{% static 'eng.png' %}" alt=""></li>
+               
                 <li><a href="/usereditprofile"><img src="{% static 'user.png' %}" alt=""></a></li>
             </ul>
         </nav>
 </header>
 <div class="container">
+  <div class="first_line">
+  <div class="image_container_">
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="{{search_results.0.18}}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    {% with 2 as i %}
+    {% for resultim in image_results %}
+        <div class="column">
+          <img class="demo cursor" src="{{resultim.0}}" style="width:100%" onclick="currentSlide({i})" alt="Cinque Terre">
+        </div>
+    {% endfor %}
+    {% endwith %}
+
+
+    
+  </div>
   <div class="buttncontainer">
     <div class="mySlides">
         <div class="numbertext">1 / 2</div>
@@ -50,22 +67,8 @@
     <a class="prev" onclick="plusSlides(-1)">❮</a>
     <a class="next" onclick="plusSlides(1)">❯</a>
   </div>
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="{{search_results.0.18}}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-    </div>
-    {% with 2 as i %}
-    {% for resultim in image_results %}
-        <div class="column">
-          <img class="demo cursor" src="{{resultim.0}}" style="width:100%" onclick="currentSlide({i})" alt="Cinque Terre">
-        </div>
-    {% endfor %}
-    {% endwith %}
-
-
-    
-  </div>
-</div><div class="iteminfo">
+</div>
+  <div class="iteminfo_page">
   <h1>Процесор {{search_results.0.3}}
 
   </h1>
@@ -73,18 +76,17 @@
     Мережі магазинів
   </h2>
   <div class="storelist">
-    <a href="/shop/"><div class="storeitem">
+    <a href="/shop/" class="storeitem">
       Comfy
-    </div></a>
-    <a href="/shop/"><div class="storeitem">
+    </a>
+    <a href="/shop/" class="storeitem">
       Foxtrot
-    </div></a>
-    <a href="/shop/"><div class="storeitem">
+   </a>
+    <a href="/shop/" class="storeitem">
       Eldorado
-    </div></a>
-    <a href="/shop/"><div class="storeitem">
-      MTA
-    </div></a>
+    </a>
+    <a href="/shop/"class="storeitem">
+      MTA </a>
     
     
     
@@ -97,11 +99,12 @@
   <button class="addwishlist">Додати у порівняння</button>
 </a>
 </div>
-  <h1 class="headerinfocpu">
-    Характеристики
-  </h1>
+</div>
 
   <div class=" maininfolistcpu">
+    <h1 class="headerinfocpu">
+      Характеристики
+    </h1>
     <div class="maininfoitem">
       <div class="maininfoitemleft">
         <p>Модель процесора</p>
@@ -229,15 +232,15 @@
     </script>
     <script>
      function toggleAdditionalInfo() {
-  var additionalInfo = document.getElementById('additionalInfo');
-  var toggleButton4 = document.getElementById('toggleButton4');
-  if (additionalInfo.style.display === 'none') {
-    additionalInfo.style.display = 'block';
-    toggleButton4.textContent = 'Приховати';
-  } else {
-    additionalInfo.style.display = 'none';
-    toggleButton4.textContent = 'Більше характеристик';
-  }
+      var additionalInfo = document.getElementById('additionalInfo');
+      var toggleButton4 = document.getElementById('toggleButton4');
+      if (additionalInfo.style.display === 'none') {
+        additionalInfo.style.display = 'block';
+        toggleButton4.textContent = 'Приховати';
+      } else {
+        additionalInfo.style.display = 'none';
+        toggleButton4.textContent = 'Більше характеристик';
+      }
 }
     </script>
     <script>
