@@ -1,0 +1,1285 @@
+/* Підключаємо шрифт Inter Regular */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 180px;
+  padding: 0.5em;
+  border: 1.5px solid #0f0202;
+  border-radius: 20px;
+}
+
+#toggleMemoryTypeButton {
+  background-color: transparent;
+  border:none;
+}
+#toggleMemoryTypeButton1 {
+  background-color: transparent;
+  border:none;
+  margin-left: 20px;
+}
+#toggleMemoryTypeButton2 {
+  background-color: transparent;
+  border:none;
+  
+}
+
+#toggleMemoryTypeButton3 {
+  background-color: transparent;
+  border:none;
+}
+#extraMemoryTypeCheck1,
+#extraMemoryTypeCheck2,
+#extraMemoryTypeCheck3 {
+    margin-left: 34px;
+}
+#extraMemoryTypeCheck9,
+#extraMemoryTypeCheck10,
+#extraMemoryTypeCheck11 {
+    margin-left: 34px;
+}
+#extraMemoryTypeCheck7,
+#extraMemoryTypeCheck8,
+#extraMemoryTypeCheck6 {
+    margin-left: 34px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    list-style-type: none;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+}
+
+.headnav {
+    background-color: #FEAEAE;
+}
+
+#toggleButton4 {
+  font-size: 40px;
+  text-align: center;
+  border-radius: 50px;
+  background: #A65A83;
+  margin-left: 22%;
+  width: 55%;
+  margin-bottom: 0px;
+  align-items: center;
+
+}
+#toggleButton5 {
+  font-size: 40px;
+  text-align: center;
+  border-radius: 50px;
+  background: #A65A83;
+  margin-left: 22%;
+  margin-bottom: 1px;
+  width: 55%;
+  
+  align-items: center;
+  position: relative;
+  bottom: 600px;
+
+}
+
+.moved-up {
+}
+.moved-up1 {
+  margin:30px;
+}
+
+.headnav nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.headnav li {
+    margin-left: 20px;
+}
+
+/* Змінюємо margin-left на margin-right для елементів класу rightnav */
+.headnav .rightnav {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.headnav .leftnav li {
+    margin-left: 40px;
+}
+
+.headnav .leftnav {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 24px;
+    display: flex;
+}
+.headnav li:hover {
+  background-color: #d3a3a3; /* Змініть колір на бажаний */
+}
+.headnav a {
+  text-decoration: none;
+}
+
+.searchnav .centered {
+    font-size: 48px;
+    text-align: center;
+    padding-top: 57px;
+    padding-bottom: 57px;
+
+    
+    
+}
+
+.searchnav {
+    background-color: #FFCFB2;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.round {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    padding-left: 33%;
+    padding-top: 10px;
+    padding-bottom: 100px;
+
+}
+
+.round input[type="text"] {
+  font-family: 'Inter', sans-serif;
+font-size: 20px;
+    border: none;
+    padding: 15px;
+    padding-right: 0%;
+    border-radius: 20px;
+    width: 500px;
+
+    
+}
+
+
+.round .imgbuttn {
+  height: 56px;
+  width: 56px;
+
+  padding-left: 0%;
+  z-index: 1;
+
+  border-radius: 20px;
+  padding: 8px;
+  background: #A65A83;
+  border: none;
+  
+}
+
+.product{
+    width: 270px;
+    height: 320px;
+    flex-shrink: 0;
+    border: 1px solid #FEAEAE;
+    background: rgba(251, 205, 205, 0.24);
+
+   
+}
+.photoprod{
+
+  
+  z-index: 1;
+
+  max-width: 100%;
+  max-height: 80%;
+  align-items: center;
+   
+  
+
+
+
+}
+.star{
+    margin-left: 27px;
+  
+    padding-top: 10px;
+}
+.textprod{
+    text-align: center;
+
+
+}
+
+.popular, .recent {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #FFE8E1;
+}
+.photoproddiv{
+  background-color:#fff;
+  width: 100%;
+  height: 85%;
+}
+
+
+
+
+.product {
+    margin-left: 17px;
+    margin-right: 17px;
+
+    display: inline-block;
+}
+
+.productlist{
+    display: inline-block;
+}
+.prodbutton{
+  margin: 10px;
+    width: 25px;
+    position: relative;
+    bottom: 315px;
+    right: 10px;
+    z-index: 2;
+    margin-left: 5%;
+   margin-left: 90%;
+    margin-top: 15px;
+    display: list-item;
+
+}
+
+.logform{
+    background-color: #FFCFB2;
+}
+/* Стилі для основного контейнера */
+body.logform {
+    margin: 0;
+    padding: 0;
+    background-image: url('fon.svg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Стилі для форми */
+  .inputform {
+
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #FFE8E1;
+    padding: 70px;
+    padding-top:40px ;
+    padding-bottom:40px ;
+
+    border-radius: 30px;
+    margin-top: 130px;
+
+
+   
+  }
+  
+  /* Стилі для малих кнопок */
+  .smallbtn {
+    border-radius: 100px;
+
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 20px;
+
+
+  }
+  
+  /* Стилі для міток */
+  label {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* Стилі для текстових полів вводу */
+  input[type="text"],
+  input[type="password"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+
+  }
+  
+  /* Стилі для великої кнопки */
+  .bigbtn {
+    border-radius: 100px;
+
+    margin-top: 40px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+  }
+  
+  /* Стилі для тексту "Забули пароль?" */
+  .smalltext {
+    font-size: 12px;
+    cursor: pointer;
+  }
+.search{
+    background-color: #FFCFB2;
+}
+  
+.menusearch img{
+  width:360px ;
+  margin-right: 30px;
+  margin-left: 30px;
+
+   
+
+}
+
+.menusearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+  }
+
+
+.complectsearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+}
+.complectsearch img{
+    width:250px ;
+    margin-right: 90px;
+    margin-left: 90px;
+  
+     
+  
+  }
+
+
+.compare{
+    background: #FFF4CE;
+}
+
+
+.comparelistelement{
+    display: contents;
+    margin: 10px;
+    border: 3px solid #FFCFB2;
+    width:100%;
+
+}
+.maincompare{
+  
+    
+    margin: 10px;
+    width:80%;
+    display:flex;
+    display: flex;
+    align-items: center;
+    
+}
+
+.comparelistelement {
+    display: flex;
+    align-items: center;
+  }
+  
+  .comparelistelement img {
+    margin-right: 10px;
+  }
+  
+  .comparelistelement h1 {
+    margin: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    
+  }
+  
+  .comparephoto {
+    background-color: #ffffff;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.userdata {
+    display: flex;
+}
+.userlogo img{
+    width: 250px;
+}
+.userlogo{
+    
+    margin-left: 400px;
+}
+
+.name{
+    
+    margin-left: 20px;
+}
+.name h3{
+    font-size: 35px;
+}
+.name h1{
+    font-size: 40px;
+    margin-top: 85px;
+}
+.mail {
+    font-size: 35px;
+    margin-left: 30px;
+    margin-top: 85px;
+}
+
+.userlogo {
+    text-align: center;
+}
+
+
+
+.changeprofileform {
+
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+  
+
+
+   
+  }
+  
+  /* Стилі для малих кнопок */
+  .smallbtn {
+    border-radius: 100px;
+
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 20px;
+
+
+  }
+  .mainlabel{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+   
+
+  }
+  /* Стилі для міток */
+  label {
+    font-size: 20px;
+
+  }
+  
+  /* Стилі для текстових полів вводу */
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+
+  }
+  
+  /* Стилі для великої кнопки */
+  .bigbtn {
+    border-radius: 100px;
+    
+    margin-top: 15px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+  }
+  
+  /* Стилі для тексту "Забули пароль?" */
+  .smalltext {
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+
+
+/* Заокруглені краї елементів акордеону */
+.accordion-item {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  background-color: #b03e1e;
+    margin-top: 10px;
+}
+.accordion-button-collapse{
+  border-radius: 100px;
+
+
+}
+
+.addproduct{
+
+  margin: 10px;
+
+  background: #D9D9D9;
+
+width: 200px;
+height: 50px;
+flex-shrink: 0;
+
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+align-items: center;
+}
+
+
+.deleteproduct {
+  display: flex; /* Встановлюємо flex контейнер */
+  justify-content: center; /* Вирівнюємо елементи по горизонталі в центр */
+  align-items: center; /* Вирівнюємо елементи по вертикалі в центр */
+  margin: 10px;
+  width: 200px;
+  height: 50px;
+  flex-shrink: 0;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: #AE1E41;
+}
+
+.deleteproduct img {
+  margin-right: 5px; /* Задаємо відступ праворуч від зображення, щоб відокремити від тексту */
+  width: 20px;
+}
+
+
+.deleteproductform{
+  display: flex; /* Встановлюємо flex контейнер */
+}
+.deleteproductone {
+  display: flex; /* Встановлюємо flex контейнер */
+  justify-content: center; /* Вирівнюємо елементи по горизонталі в центр */
+  align-items: center; /* Вирівнюємо елементи по вертикалі в центр */
+
+  float:right;
+  margin: 10px;
+  width: 200px;
+  height: 50px;
+  flex-shrink: 0;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: #AE1E41;
+}
+
+.deleteproduct img {
+  margin-right: 5px; /* Задаємо відступ праворуч від зображення, щоб відокремити від тексту */
+  width: 20px;
+}
+
+
+
+
+
+
+
+
+.compareform{
+  display: flex; /* Встановлюємо flex контейнер */
+}
+.compareheaditem div{
+  height: 215px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+
+}
+.compareheaditem{
+  
+  width: 300px;
+  height: 250px;
+  
+}
+.compareheaditem img{
+  
+  
+
+}
+.tablecomp th{
+  width: 320px;
+  height: 270px;
+
+}
+
+
+
+
+
+.flex-container {
+  display: flex;
+  align-items: center; /* Вирівнюємо елементи по горизонталі по центру */
+}
+
+.compareheaditem {
+  font-family: Inter;
+  font-size: 18px;
+
+  background-color: #F9EEEB
+}
+
+.compare-img {
+  width: 200px;
+  margin-bottom: 5px;
+}
+.tablecomp{
+  
+  display: flex; /* Встановлюємо flex контейнер для елементу .compareheaditem */
+  flex-direction: column; /* Вирівнюємо елементи по вертикалі (один під одним) */
+  align-items: center; /* Вирівнюємо елементи по горизонталі по центру */
+}
+
+
+.oneelement{
+  background: #FEAEAE;
+  
+
+}
+.oneelement td{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+
+
+
+
+}
+
+.fewelement{
+
+  background-color: #F9EEEB;
+}
+
+.fewelement td{
+  text-align: center;
+
+
+   font-family: Inter;
+  font-size: 18px;
+ 
+  background-color: #F9EEEB
+}
+
+.searchtitle{
+  margin-top: 15px;
+  color: #F8F8F4;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #A65A83;
+  width: fit-content;
+  margin-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.dropdown-menu{
+  margin-left: 34px;
+}
+.dropdownitem{
+  font-size: 24px;
+
+  background-color: #D9D9D9;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 55px;
+  padding-left: 55px;
+
+}
+.checkboxes{
+  margin-left: 34px;
+
+}
+.checkboxesmenu{ 
+  margin-top: 6px;
+  align-items: center;
+  display: flex; /* Встановлюємо flex-контейнер для вирівнювання по горизонталі */
+  align-items: center; /* Вирівнювання вертикально по центру */
+
+
+  
+}
+
+
+input[type="checkbox"] {
+  /* ... (інші стилі) ... */
+  display: none; /* Приховуємо стандартний чекбокс */
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 25px; /* Додатковий відступ для вміщення галочки */
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  background-color: #D9D9D9; /* Колір фону квадрата */
+}
+
+input[type="checkbox"]:checked + label::before {
+  content: "\2714"; /* Символ галочки */
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  color: #000;
+  background-color: #D9D9D9; /* Колір фону квадрата */
+}
+
+
+.checkboxesmenu input[type="checkbox"]
+
+{
+  width: 20px; /* Нова ширина квадрата */
+  height: 20px; /* Нова висота квадрата */
+  appearance: none; /* Скасовуємо стандартний зовнішній вигляд */
+  -webkit-appearance: none; /* Для Safari */
+  border: 2px solid #000; /* Товщина рамки квадрата */
+  background-color: #D9D9D9; /* Колір фону квадрата */
+  outline: none; /* Видаляємо контур при фокусі */
+
+}
+
+
+
+
+.showmore{
+  font-size: 15px;
+  margin-left: 30px;
+  margin-top: 10px;
+  font-weight: normal; /* Забрати жирний стиль */
+
+}
+.searchsubmit{
+  margin-left: 34px;
+  margin-top: 30px;
+  width: 250px;
+  height: 100px;
+  flex-shrink: 0;
+  background: #A65A83;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.leftmenu{
+  width: fit-content;
+  padding-right: 10px;
+
+  border-right: 2px solid  #A65A83;
+
+}
+.rightmenu{
+  text-align: center;
+  width: 100%;
+}
+.rightmenu h1{
+  width: 100%;
+}
+
+.frameprod{
+  width: 270px;
+  height:300px;
+  max-height: 300px;
+  border: 1px solid #FEAEAE;
+  background: #F9EEEB;
+
+}
+.buttnprod{
+  max-width: 30px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  z-index: 1;
+  bottom: 250px;
+  left: 230px;
+
+}
+.mainphoto img{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.mainphoto{
+  background-color: #fff;
+}
+.maintext{
+
+margin: 0;
+}
+
+.productgrid{
+  display: inline-grid;
+  grid-template-columns: 1fr  1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+
+
+
+.dropdown {
+  position:absolute;
+  top: 95px;
+  left: 1100px;
+ 
+}
+
+.dropdown-btn {
+  width: 150px;
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.2s;
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .triangle {
+  transform: rotate(180deg);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.buttncontainer{
+  position: relative;
+}
+/* Center the imgslide images within their blocks */
+.mySlides {
+  background-color: #fff;
+  height: 450px;
+  width: 450px;
+  border: 1px solid #562B2B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Add this line */
+}
+
+.imgslide {
+  max-height: 100%; /* Change max-height to 100% */
+  max-width: 100%; /* Change max-width to 100% */
+  display: block;
+  position: absolute; /* Add this line */
+  top: 50%; /* Add this line */
+  left: 50%; /* Add this line */
+  transform: translate(-50%, -50%); /* Add this line */
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  width: 100%;
+}
+.image_container_{
+  display: flex;
+  width: 40%;
+
+}
+/* Hide the images by default */
+
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  left: 408px;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row{
+  width: 100px;
+ 
+  display: flex;
+ flex-direction: column;
+ position: relative;
+
+}
+
+/* Six columns side by side */
+.column {
+
+  background-color: #fff;
+  width: 83px;
+  height: 83px;
+
+  border: 1px solid #562B2B;
+
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Add this line */
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.iteminfo{
+  width: 50%;
+  position: absolute;
+  bottom: 230px;
+  left: 700px;
+
+}
+.iteminfo h2{
+  margin-left:250px ;
+
+}
+
+.iteminfo_page{
+  width: 60%;
+  text-align: center;
+
+}
+.iteminfo_page h2{
+
+}
+.first_line{
+  display: flex;
+}
+.storelist {
+  display: flex;
+  justify-content: center; /* Центрує елементи відносно головного контейнера */
+  width: 100%;
+}
+
+.storeitem {
+  width: 150px; /* Зменшено ширину */
+  height: 37px;
+  font-size: 30px; /* Зменшено розмір шрифту */
+  border-radius: 50px;
+  background: #FFF4CE;
+  text-align: center;
+  margin: 10px auto; /* Змінено margin для автоматичного центрування */
+}
+
+.addwishlist{
+  align-items: center;
+  width: 80%;
+  height: 37px;
+  font-size: 32px;
+  border-radius: 50px;
+  background: #A65A83;;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 10px;
+
+  padding-bottom: 40px;
+
+
+}
+
+.maininfoitem{
+  font-size: 20px;
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  background: #F9EEEB;
+  margin-bottom: 26px;
+
+}
+.maininfoitemleft{
+  margin-left: 15px;
+
+  width: 50%;
+
+  
+}
+.maininfoitemright{
+  margin-right: 15px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.maininfolist{
+  position: relative;
+  bottom: 430px;
+}
+
+.maininfolistcpu{
+
+}
+
+.headerinfocpu{
+  font-size: 40px;
+margin-top: 0px;
+  text-align: center;
+}
+.headerinfo{
+  font-size: 40px;
+  position: relative;
+  bottom: 470px;
+  text-align: center;
+}
+
+.buttoninfo h1{
+  font-size: 40px;
+  text-align: center;
+  border-radius: 50px;
+  background: #A65A83;
+  margin-left: 22%;
+  width: 55%;
+  
+  align-items: center;
+
+}
+
+.buttoninfocpu h1{
+  font-size: 40px;
+  text-align: center;
+  border-radius: 50px;
+  background: #A65A83;
+  margin-left: 22%;
+  width: 55%;
+  
+  align-items: center;
+  position: relative;
+  bottom: 130px;
+
+}
+
+.cities{
+  display: flex;
+  margin-left: 40px;
+}
+.city{
+  margin: 30px;
+}
+.city button{
+  width: 100px;
+  height: 30px;
+
+  background: #D9D9D9;
+}
+.leftinfoshop{
+  width: 50%;
+}
+.mapshop{
+  width: 60%;
+  margin-top: 50px;
+  margin-right: 200px;
+  
+}
+.mainshop{
+  display: flex;
+}
+
+.mapshop img{
+
+  width: 1000%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel-body{
+  width: 1500px;
+}
+#commentText{
+  font-size: 20px;
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  background: #F9EEEB;
+  margin-bottom: 26px;
+
+}
+
+#publishButton{
+  font-size: 40px;
+  text-align: center;
+  border-radius: 50px;
+  background: #A65A83;
+  margin-left: 33%;
+  width: 30%;
+  
+  align-items: center;
+
+}
+
+.pb-cmnt-container {
+  font-family: Lato;
+  margin-top: 100px;
+}
+
+.pb-cmnt-textarea {
+  resize: none;
+  padding: 20px;
+  height: 130px;
+  width: 100%;
+  border: 1px solid #F2F2F2;
+}
+
+.comment {
+  margin-top:15px;
+  font-size: 30px;
+  margin-left: 80px;
+  width: 1000px;
+}
+.comment span{
+  width: 1000px;
+}
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.infocompare{
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+}
