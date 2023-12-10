@@ -87,8 +87,472 @@ align-items: center;
         <!-- Якщо список порожній, вивести інше повідомлення -->
         <h1 id="info-message" class="infocompare">Список порожній</h1>
     {% endif %}
+
+
+
+
+
+    {% with ram_items=search_results.ram %}
+
+
+    <table class="tablecomp" id="table_ram">
+      {% for ramitem in search_results.ram %}
+
+      <th >
+          <div class="flex-container">
+              <div class="compareheaditem">
+                <div class="compareimageblock">
+                    <img src="{{ramitem.14}}" alt="" class="compare-img">
+                </div>
+              
+              <div class="compare-text">{{ramitem.8}}</div>
+              </div>
+          </th>
+
+      {% endfor %}
+
+
+
+      <tr class="oneelement">
+         <td colspan="{{ ram_items|length }}">
+            Виробник
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for ramitem in search_results.ram %}
+          <td style="width: 300px;">
+              {{ramitem.12}}
+          </td>
+          {% endfor %}
+          
+         
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ ram_items|length }}">
+            Кількість пам'яті
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for ramitem in search_results.ram %}
+          <td style="width: 300px;">
+              {{ramitem.1}}
+          </td>
+          {% endfor %}
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ ram_items|length }}">
+            Тип пам'яті
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for ramitem in search_results.ram %}
+          <td style="width: 300px;">
+              {{ramitem.2}}
+          </td>
+          {% endfor %}
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ ram_items|length }}">
+            Швидкість пам'яті
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for ramitem in search_results.ram %}
+          <td style="width: 300px;">
+              {{ramitem.3}} 
+          </td>
+          {% endfor %}
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ ram_items|length }}">
+            Країна виробника
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for ramitem in search_results.ram %}
+          <td style="width: 300px;">
+              {{ramitem.10}}
+          </td>
+          {% endfor %}
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ ram_items|length }}">
+            Інтерфейс
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for ramitem in search_results.ram %}
+          <td style="width: 300px;">
+              {{ramitem.4}}
+          </td>
+          {% endfor %}
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ ram_items|length }}">
+            Напруга
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for ramitem in search_results.ram %}
+          <td style="width: 300px;">
+              {{ramitem.6}}
+          </td>
+          {% endfor %}
+      </tr>
+
+     
+      
+
+
+    </table> 
+    {% endwith %}
+
+
+
+
+
+
+    {% with networkcard_items=search_results.networkcard %}
+
+
+    <table class="tablecomp" id="table_networkcard">
+      {% for networkcarditem in search_results.networkcard %}
     
-       {% if search_results.gpu %}
+      <th >
+          <div class="flex-container">
+              <div class="compareheaditem">
+                <div class="compareimageblock">
+                    <img src="{{networkcarditem.12}}" alt="" class="compare-img">
+                </div>
+              
+              <div class="compare-text">{{networkcarditem.6}}</div>
+              </div>
+          </th>
+    
+      {% endfor %}
+    
+    
+    
+      <tr class="oneelement">
+         <td colspan="{{ networkcard_items|length }}">
+            Виробник
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for networkcarditem in search_results.networkcard %}
+          <td style="width: 300px;">
+              {{networkcarditem.10}}
+          </td>
+          {% endfor %}
+          
+         
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ networkcard_items|length }}">
+            Інтерфейс
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for networkcarditem in search_results.networkcard %}
+          <td style="width: 300px;">
+              {{networkcarditem.1}}
+          </td>
+          {% endfor %}
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ networkcard_items|length }}">
+            Швидкість передавання даних
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for networkcarditem in search_results.networkcard %}
+          <td style="width: 300px;">
+              {{networkcarditem.3}}
+          </td>
+          {% endfor %}
+      </tr>
+      <tr class="oneelement">
+         <td colspan="{{ networkcard_items|length }}">
+            Наявність порту RJ45
+          </td>
+        </tr>
+      <tr class="fewelement">
+          {% for networkcarditem in search_results.networkcard %}
+          <td style="width: 300px;">
+              {{networkcarditem.4}} 
+          </td>
+          {% endfor %}
+      </tr>
+      
+    
+    
+    </table> 
+    {% endwith %}
+
+
+
+
+
+
+    
+{% with screen_items=search_results.screen %}
+
+
+<table class="tablecomp" id="table_screen">
+  {% for screenitem in search_results.screen %}
+
+  <th >
+      <div class="flex-container">
+          <div class="compareheaditem">
+            <div class="compareimageblock">
+                <img src="{{screenitem.16}}" alt="" class="compare-img">
+            </div>
+          
+          <div class="compare-text">{{screenitem.9}}</div>
+          </div>
+      </th>
+
+  {% endfor %}
+
+
+
+  <tr class="oneelement">
+     <td colspan="{{ screen_items|length }}">
+        Виробник
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for screenitem in search_results.screen %}
+      <td style="width: 300px;">
+          {{screenitem.14}}
+      </td>
+      {% endfor %}
+      
+     
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ screen_items|length }}">
+        Діагональ екрану
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for screenitem in search_results.screen %}
+      <td style="width: 300px;">
+          {{screenitem.1}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ screen_items|length }}">
+        Роздільна здатність
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for screenitem in search_results.screen %}
+      <td style="width: 300px;">
+          {{screenitem.2}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ screen_items|length }}">
+        Тип матриці
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for screenitem in search_results.screen %}
+      <td style="width: 300px;">
+          {{screenitem.3}} 
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ screen_items|length }}">
+        Країна виробника
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for screenitem in search_results.screen %}
+      <td style="width: 300px;">
+          {{screenitem.12}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ screen_items|length }}">
+        Відношення сторін
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for screenitem in search_results.screen %}
+      <td style="width: 300px;">
+          {{screenitem.4}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ screen_items|length }}">
+        Частота оновлення екрану
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for screenitem in search_results.screen %}
+      <td style="width: 300px;">
+          {{screenitem.5}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+    <td colspan="{{ screen_items|length }}">
+        Яскравість екрану
+     </td>
+   </tr>
+ <tr class="fewelement">
+     {% for screenitem in search_results.screen %}
+     <td style="width: 300px;">
+         {{screenitem.7}}
+     </td>
+     {% endfor %}
+ </tr>
+
+ 
+  
+
+
+</table> 
+{% endwith %}
+
+
+
+
+
+{% with rom_items=search_results.rom %}
+
+
+<table class="tablecomp" id="table_rom">
+    
+  {% for romitem in search_results.rom %}
+
+
+  <th >
+      <div class="flex-container">
+          <div class="compareheaditem">
+            <div class="compareimageblock">
+                <img src="{{romitem.15}}" alt="" class="compare-img">
+            </div>
+          
+          <div class="compare-text">{{romitem.9}}</div>
+          </div>
+      </th>
+
+  {% endfor %}
+
+
+
+  <tr class="oneelement">
+     <td colspan="{{ rom_items|length }}">
+        Виробник
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for romitem in search_results.rom %}
+      <td style="width: 300px;">
+          {{romitem.13}}
+      </td>
+      {% endfor %}
+      
+     
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ rom_items|length }}">
+        Об'єм пам'яті
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for romitem in search_results.rom %}
+      <td style="width: 300px;">
+          {{romitem.1}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ rom_items|length }}">
+        Швидкість читання
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for romitem in search_results.rom %}
+      <td style="width: 300px;">
+          {{romitem.2}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ rom_items|length }}">
+        Швидкість запису
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for romitem in search_results.rom %}
+      <td style="width: 300px;">
+          {{romitem.3}} 
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ rom_items|length }}">
+        Країна виробника
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for romitem in search_results.rom %}
+      <td style="width: 300px;">
+          {{romitem.11}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ rom_items|length }}">
+        Тип диску
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for romitem in search_results.rom %}
+      <td style="width: 300px;">
+          {{romitem.4}}
+      </td>
+      {% endfor %}
+  </tr>
+  <tr class="oneelement">
+     <td colspan="{{ rom_items|length }}">
+        Тип роз'єму
+      </td>
+    </tr>
+  <tr class="fewelement">
+      {% for romitem in search_results.rom %}
+      <td style="width: 300px;">
+          {{romitem.5}}
+      </td>
+      {% endfor %}
+  </tr>
+
+ 
+  
+
+
+</table> 
+{% endwith %}
+
+
+
+
+
+
+
+
+    
+    
+       
           {% with gpu_items=search_results.gpu %}
 
           <table class="tablecomp" id="table_gpu">
@@ -97,7 +561,7 @@ align-items: center;
             <th >
                 <div class="flex-container">
                     <div class="compareheaditem">
-                        <div>
+                        <div class="compareimageblock">
                             <img src="{{videoproc.17}}" alt="" class="compare-img">
                         </div>
                     
@@ -209,9 +673,7 @@ align-items: center;
 
           </table> 
           {% endwith %}
-        {% endif %}
-        
-        {% if search_results.cpu %}
+
           {% with cpu_items=search_results.cpu %}
 
           <table class="tablecomp" id="table_cpu">
@@ -220,7 +682,11 @@ align-items: center;
             <th >
                 <div class="flex-container">
                     <div class="compareheaditem">
-                    <img src="{{processor.16}}" alt="" class="compare-img">
+                        <div class="compareimageblock">
+                            <img src="{{processor.16}}" alt="" class="compare-img">
+
+                        </div>
+
                     <div class="compare-text">{{processor.3}}</div>
                     </div>
                 </th>
@@ -333,7 +799,6 @@ align-items: center;
 
           </table> 
           {% endwith %}
-        {% endif %}
 
           {% if table_list %}
             <!-- Ось ваша поточна логіка для відображення таблиць і кнопок -->
