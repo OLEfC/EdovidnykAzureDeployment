@@ -617,10 +617,8 @@ align-items: center;
   display: flex; /* Встановлюємо flex контейнер */
 }
 .compareheaditem div{
-  height: 215px;
-  width: 300px;
-  display: flex;
-  justify-content: center;
+ 
+ 
 
 }
 .compareheaditem{
@@ -629,11 +627,7 @@ align-items: center;
   height: 250px;
   
 }
-.compareheaditem img{
-  
-  
 
-}
 .tablecomp th{
   width: 320px;
   height: 270px;
@@ -647,18 +641,32 @@ align-items: center;
 .flex-container {
   display: flex;
   align-items: center; /* Вирівнюємо елементи по горизонталі по центру */
+  width: 350px;
 }
 
 .compareheaditem {
   font-family: Inter;
   font-size: 18px;
+  width: 350px;
+
 
   background-color: #F9EEEB
 }
+.compareimageblock{
 
+  width: 350px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
 .compare-img {
-  width: 200px;
-  margin-bottom: 5px;
+
+ max-width: 100%;
+ max-height: 100%;
+
+}
+.compare-text{
+  width: 100%;
 }
 .tablecomp{
   
