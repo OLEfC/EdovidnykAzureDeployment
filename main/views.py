@@ -130,15 +130,15 @@ def search(request):
             INNER JOIN edovidnyk.producer ON edovidnyk.rom.producer = edovidnyk.producer.idproducer)
             INNER JOIN edovidnyk.idpage ON edovidnyk.rom.idpage = edovidnyk.idpage.ididPAGE)
             WHERE edovidnyk.producer.name LIKE %s OR edovidnyk.rom.modelrom LIKE %s
-        '''
-        ''' Додати екран UNION
+       
+            UNION
             SELECT edovidnyk.screen.modelscreen, edovidnyk.producer.name, edovidnyk.idpage.mainphoto,edovidnyk.screen.idpage
             FROM ((edovidnyk.screen
             INNER JOIN edovidnyk.producer ON edovidnyk.screen.producer = edovidnyk.producer.idproducer)
             INNER JOIN edovidnyk.idpage ON edovidnyk.screen.idpage = edovidnyk.idpage.ididPAGE)
             WHERE edovidnyk.producer.name LIKE %s OR edovidnyk.screen.modelscreen LIKE %s'''
         with connection.cursor() as cursor:
-            cursor.execute(query, [f'%{search_query}%'] * 12)
+            cursor.execute(query, [f'%{search_query}%'] * 14)
             search_results = cursor.fetchall()
         #if search_results:#щоб повернути іф перенеси блок редер в нього 
 
