@@ -15,7 +15,9 @@ def find_table_names_by_idpages(idpage):
             UNION
             SELECT 'gpu' AS table_name, idpage FROM gpu WHERE idpage = %s
             UNION
-            SELECT 'device' AS table_name, idpage FROM device WHERE idpage = %s
+            SELECT 'pc' AS table_name, idpage FROM pc WHERE idpage = %s
+             UNION
+            SELECT 'laptop' AS table_name, idpage FROM laptop WHERE idpage = %s
             UNION
             SELECT 'networkcard' AS table_name, idpage FROM networkcard WHERE idpage = %s
             UNION
@@ -25,7 +27,7 @@ def find_table_names_by_idpages(idpage):
             UNION
             SELECT 'screen' AS table_name, idpage FROM screen WHERE idpage = %s
             """,
-            [idpage] * 7,  # Повторити idpage 7 разів для всіх запитів
+            [idpage] * 8,  # Повторити idpage 7 разів для всіх запитів
         )
         result = cursor.fetchall()
         results=result[0] if result else None
@@ -58,7 +60,35 @@ def parse_data(table,idpage):
         result = cursor.fetchall()
         return result
     
+
+def parse_data_pc(table,idpage):
+    with connection.cursor() as cursor:
+        
+        # Перевірка наявності idpage в таблиці popular
+        cursor.execute("SELECT * FROM popular WHERE idpage = %s", (idpage,))
+        result = cursor.fetchone()
+        
+        # Якщо idpage вже існує в таблиці popular
+        if result:
+            # Збільшуємо значення clickrate на одиницю
+            cursor.execute("UPDATE popular SET clickrate = clickrate + 1 WHERE idpage = %s", (idpage,))
+        else:
+            # Якщо idpage не існує в таблиці popular, додаємо новий запис з clickrate = 1
+            cursor.execute("INSERT INTO popular (idpage, clickrate) VALUES (%s, 1)", (idpage,))
+      
+        cursor.execute(
+            '''SELECT *, producer.name AS producer_name, idpage.mainphoto
+                FROM edovidnyk.%s
+                INNER JOIN producer ON edovidnyk.%s.producer = producer.idproducer
+                INNER JOIN edovidnyk.idpage ON edovidnyk.%s.idpage = edovidnyk.idpage.ididPAGE
+                INNER JOIN producer AS cpuProducer ON edovidnyk.%s.cpuProducer = cpuProducer.idproducer
+                INNER JOIN producer AS gpuProducer ON edovidnyk.%s.gpuProducer = gpuProducer.idproducer
+                WHERE edovidnyk.%s.idpage = %s;'''% (table,table,table,table,table, table,idpage)
+        )
+        result = cursor.fetchall()
+        return result
     
+
 def searchimages(idpage):
      with connection.cursor() as cursor:
         
@@ -76,6 +106,7 @@ def searchimages(idpage):
 
 def product_detail(request, product_id):
     table = find_table_names_by_idpages(product_id)[0]
+    print(table)
     
     if table is None:
         return(HttpResponse("404"))
@@ -89,8 +120,11 @@ def product_detail(request, product_id):
             return render(request, 'gpuitem.html', {'search_results': search_results,'image_results':image})
 
             
-        elif table=='device':
-            return render(request, 'deviceitem.html', {'search_results': search_results,'image_results':image})
+        elif table=='pc':
+            return render(request, 'pcitem.html', {'search_results': search_results,'image_results':image})
+        
+        elif table=='laptop':
+            return render(request, 'laptopitem.html', {'search_results': parse_data_pc(table,product_id),'image_results':image})
 
             
         elif table=='networkcard':

@@ -1,18 +1,18 @@
 
-{% with screen_items=search_results.screen %}
+{% with laptop_items=search_results.laptop %}
 
 
-<table class="tablecomp" id="table_screen">
-  {% for screenitem in search_results.screen %}
+<table class="tablecomp" id="table_laptop">
+  {% for laptopitem in search_results.laptop %}
 
   <th >
       <div class="flex-container">
           <div class="compareheaditem">
             <div class="compareimageblock">
-                <img src="{{screenitem.14}}" alt="" class="compare-img">
+                <img src="{{laptopitem.14}}" alt="" class="compare-img">
             </div>
           
-          <div class="compare-text">{{screenitem.8}}</div>
+          <div class="compare-text">{{laptopitem.8}}</div>
           </div>
       </th>
 
@@ -21,88 +21,88 @@
 
 
   <tr class="oneelement">
-     <td colspan="{{ screen_items|length }}">
+     <td colspan="{{ laptop_items|length }}">
         Виробник
       </td>
     </tr>
   <tr class="fewelement">
-      {% for screenitem in search_results.screen %}
+      {% for laptopitem in search_results.laptop %}
       <td style="width: 300px;">
-          {{screenitem.12}}
+          {{laptopitem.12}}
       </td>
       {% endfor %}
       
      
   </tr>
   <tr class="oneelement">
-     <td colspan="{{ screen_items|length }}">
+     <td colspan="{{ laptop_items|length }}">
         Кількість пам'яті
       </td>
     </tr>
   <tr class="fewelement">
-      {% for screenitem in search_results.screen %}
+      {% for laptopitem in search_results.laptop %}
       <td style="width: 300px;">
-          {{screenitem.1}}
+          {{laptopitem.1}}
       </td>
       {% endfor %}
   </tr>
   <tr class="oneelement">
-     <td colspan="{{ screen_items|length }}">
+     <td colspan="{{ laptop_items|length }}">
         Тип пам'яті
       </td>
     </tr>
   <tr class="fewelement">
-      {% for screenitem in search_results.screen %}
+      {% for laptopitem in search_results.laptop %}
       <td style="width: 300px;">
-          {{screenitem.2}}
+          {{laptopitem.2}}
       </td>
       {% endfor %}
   </tr>
   <tr class="oneelement">
-     <td colspan="{{ screen_items|length }}">
+     <td colspan="{{ laptop_items|length }}">
         Швидкість пам'яті
       </td>
     </tr>
   <tr class="fewelement">
-      {% for screenitem in search_results.screen %}
+      {% for laptopitem in search_results.laptop %}
       <td style="width: 300px;">
-          {{screenitem.3}} 
+          {{laptopitem.3}} 
       </td>
       {% endfor %}
   </tr>
   <tr class="oneelement">
-     <td colspan="{{ screen_items|length }}">
+     <td colspan="{{ laptop_items|length }}">
         Країна виробника
       </td>
     </tr>
   <tr class="fewelement">
-      {% for screenitem in search_results.screen %}
+      {% for laptopitem in search_results.laptop %}
       <td style="width: 300px;">
-          {{screenitem.10}}
+          {{laptopitem.10}}
       </td>
       {% endfor %}
   </tr>
   <tr class="oneelement">
-     <td colspan="{{ screen_items|length }}">
+     <td colspan="{{ laptop_items|length }}">
         Інтерфейс
       </td>
     </tr>
   <tr class="fewelement">
-      {% for screenitem in search_results.screen %}
+      {% for laptopitem in search_results.laptop %}
       <td style="width: 300px;">
-          {{screenitem.4}}
+          {{laptopitem.4}}
       </td>
       {% endfor %}
   </tr>
   <tr class="oneelement">
-     <td colspan="{{ screen_items|length }}">
+     <td colspan="{{ laptop_items|length }}">
         Напруга
       </td>
     </tr>
   <tr class="fewelement">
-      {% for screenitem in search_results.screen %}
+      {% for laptopitem in search_results.laptop %}
       <td style="width: 300px;">
-          {{screenitem.6}}
+          {{laptopitem.6}}
       </td>
       {% endfor %}
   </tr>

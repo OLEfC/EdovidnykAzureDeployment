@@ -1,7 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_exempt
 
 from django.db import connection
 
@@ -69,7 +68,9 @@ def find_table_names_by_idpages(idpages):
                 UNION
                 SELECT 'gpu' AS table_name, idpage FROM gpu WHERE idpage = %s
                 UNION
-                SELECT 'device' AS table_name, idpage FROM device WHERE idpage = %s
+                SELECT 'laptop' AS table_name, idpage FROM laptop WHERE idpage = %s
+                UNION
+                SELECT 'pc' AS table_name, idpage FROM pc WHERE idpage = %s
                 UNION
                 SELECT 'networkcard' AS table_name, idpage FROM networkcard WHERE idpage = %s
                 UNION
@@ -79,7 +80,7 @@ def find_table_names_by_idpages(idpages):
                 UNION
                 SELECT 'screen' AS table_name, idpage FROM screen WHERE idpage = %s
                 """,
-                [idpage] * 7,  # Повторити idpage 7 разів для всіх запитів
+                [idpage] * 8,  # Повторити idpage 7 разів для всіх запитів
             )
             result = cursor.fetchall()
             results.append(result[0] if result else None)
@@ -89,7 +90,7 @@ def find_table_names_by_idpages(idpages):
 
 from django.shortcuts import redirect
 from django.views.decorators.http import require_POST
-@csrf_exempt
+
 @require_POST
 def delete_item(request, item_id):
     user = request.user.id
@@ -104,7 +105,7 @@ def delete_item(request, item_id):
 
     return redirect('/wishlist')
 
-@csrf_exempt
+
 @require_POST
 def delete_all(request):
     user = request.user.id

@@ -1,20 +1,14 @@
-
-
-
+{% load static %}
 
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>Єдовідник</title> 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
 </head>
 <style>
-
-
-
 </style>
 <body  class="search">
   <header>
@@ -28,284 +22,352 @@
                 <li><a href="/faq">FAQ</a></li>
             </ul>
             <ul class="rightnav">
-              
+               
                 <li><a href="/usereditprofile"><img src="{% static 'user.png' %}" alt=""></a></li>
             </ul>
         </nav>
 </header>
-
-
 <div class="container">
-  <div class="buttncontainer">
-
-  
-    <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-        <img class="imgslide" src="laptop/1.avif" alt="">
-    </div>
-
-    <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-        <img class="imgslide" src="laptop/2.avif" alt="">
-    </div>
-
-    <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-        <img class="imgslide" src="laptop/3.webp" alt="">
-    </div>
-    
-    <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-        <img class="imgslide" src="laptop/4.avif" alt="">
-    </div>
-
-    <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-        <img class="imgslide" src="laptop/5.avif" alt="">
-    </div>
-    
-    <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-        <img class="imgslide" src="laptop/6.avif" alt="">
-    </div>
-    
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-  </div>
-
-
+  <div class="first_line">
+  <div class="image_container_">
 
   <div class="row">
     <div class="column">
-      <img class="demo cursor" src="laptop/1.avif" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      <img class="demo cursor" src="{{search_results.0.33}}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
     </div>
-    <div class="column">
-      <img class="demo cursor" src="laptop/2.avif" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="laptop/3.webp" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="laptop/4.avif" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="laptop/5.avif" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-    </div>    
-    <div class="column">
-      <img class="demo cursor" src="laptop/6.avif" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-    </div>
-  </div>
- 
-</div>
-<div class="iteminfo">
-  <h1>Ноутбук Apple New MacBook Air M1 13.3'' 256Gb MGN63 Space Grey 2020
-  </h1>
+    {% with 2 as i %}
+    {% for resultim in image_results %}
+        <div class="column">
+          <img class="demo cursor" src="{{resultim.0}}" style="width:100%" onclick="currentSlide({i})" alt="Cinque Terre">
+        </div>
+    {% endfor %}
+    {% endwith %}
 
-  <img src="5white.svg" alt="">
+
+    
+  </div>
+  <div class="buttncontainer">
+    <div class="mySlides">
+        <div class="numbertext">1 / 2</div>
+        <img class="imgslide" src="{{search_results.0.33}}" alt="">
+    </div>
+
+    {% for result in image_results %}
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 2</div>
+      <img class="imgslide" src="{{result.0}}" alt="">
+    </div>
+        
+    {% endfor %}
+    
+    
+
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+</div>
+  <div class="iteminfo_page">
+  <h1>Ноутбук {{search_results.0.26}}
+
+  </h1>
   <h2 >
     Мережі магазинів
   </h2>
   <div class="storelist">
-    <div class="storeitem">
+    <a href="/shop/" class="storeitem">
       Comfy
-    </div>
-    <div class="storeitem">
+    </a>
+    <a href="/shop/" class="storeitem">
       Foxtrot
-    </div>
-    <div class="storeitem">
+   </a>
+    <a href="/shop/" class="storeitem">
       Eldorado
-    </div>
-    <div class="storeitem">
-      MTA
-    </div>
+    </a>
+    <a href="/shop/"class="storeitem">
+      MTA </a>
+    
+    
+    
     
   </div>
-  <button class="addwishlist" onclick="addToWishlist()">
-    Додати у Wishlist
-</button>
+  <a href="/product/{{search_results.0.25}}/addtowishlist">
+    <button class="addwishlist">Додати у Wishlist</button>
+</a>
+<a href="/product/{{search_results.0.25}}/addtocomparelist">
+  <button class="addwishlist">Додати у порівняння</button>
+</a>
+</div>
 </div>
 
-</div>
-
-  <h1 class="headerinfo">
-    Характеристики
-  </h1>
-
-<div class=" maininfolist">
-
-  <div class="maininfoitem">
-    <div class="maininfoitemleft">
-      <p>Процесор</p>
-    </div>
-    <div class="maininfoitemright" >
-      <p>
-        Apple M1
-      </p>
-    </div>
-  
-  
-  </div>
-
-  <div class="maininfoitem">
-    <div class="maininfoitemleft">
-      <p>Відеокарта</p>
-    </div>
-    <div class="maininfoitemright" >
-      <p>
-        Apple
-      </p>
-    </div>
-  
-  
-  </div>
-
-  <div class="maininfoitem">
-    <div class="maininfoitemleft">
-      <p>Об'єм ОЗП</p>
-    </div>
-    <div class="maininfoitemright" >
-      <p>
-        8 ГБ
-
-      </p>
-    </div>
-  
-  
-  </div>
-
-  <div class="maininfoitem">
-    <div class="maininfoitemleft">
-      <p>Об'єм накопичувача</p>
-    </div>
-    <div class="maininfoitemright" >
-      <p>
-        256 ГБ
-      </p>
-    </div>
-  
-  
-  </div>
-
-  
-
-  <div class="maininfoitem">
-    <div class="maininfoitemleft">
-      <p>Діагональ екрану</p>
-    </div>
-    <div class="maininfoitemright" >
-      <p>
-        13,3''
-      </p>
-    </div>
-  
-  
-  </div>
-
-  <div class="maininfoitem">
-    <div class="maininfoitemleft">
-      <p>Операційна система</p>
-    </div>
-    <div class="maininfoitemright" >
-      <p>
-        MacOS Big Sur
-
-      </p>
-    </div>
-    
-  </div>
-
-  <div id="additionalInfo" style="display: none;">
-    <div class="maininfoitem moved-up1">
+  <div class=" maininfolistcpu">
+    <h1 class="headerinfocpu">
+      Характеристики
+    </h1>
+    <div class="maininfoitem">
       <div class="maininfoitemleft">
-        <p>Додаткова інформація 1</p>
+        <p>Модель ноутбука</p>
       </div>
       <div class="maininfoitemright" >
         <p>
-          Інформація 1
+          {{search_results.0.26}}
         </p>
       </div>
     </div>
-    <div class="maininfoitem moved-up1">
+    <div class="maininfoitem">
       <div class="maininfoitemleft">
-        <p>Додаткова інформація 2</p>
+        <p>Виробник</p>
       </div>
       <div class="maininfoitemright" >
         <p>
-          Інформація 2
+          <a href={{search_results.0.30}}>{{search_results.0.31}}</a>
+          
         </p>
       </div>
     </div>
-    <div class="maininfoitem moved-up1">
+    <div class="maininfoitem">
       <div class="maininfoitemleft">
-        <p>Додаткова інформація 3</p>
+        <p>Країна виробика</p>
       </div>
       <div class="maininfoitemright" >
         <p>
-          Інформація 3
+          {{search_results.0.29}}
         </p>
       </div>
     </div>
-  </div>
+    <div class="maininfoitem">
+      <div class="maininfoitemleft">
+        <p>Виробник процесора</p>
+      </div>
+      <div class="maininfoitemright" >
+        <p>
+          <a href={{search_results.0.36}}>{{search_results.0.37}}</a>
+          
+        </p>
+      </div>
     </div>
-    <style>
-      #toggleButton5 {
-        font-size: 40px;
-        text-align: center;
-        border-radius: 50px;
-        background: #A65A83;
-        margin-left: 22%;
-        width: 55%;
-        transform: translateY(-500px);
-        margin-bottom: 0px;
-        align-items: center;
-        margin-top: 100px;
-      }
-      </style>
+    <div class="maininfoitem">
+      <div class="maininfoitemleft">
+        <p>Модель процесора</p>
+      </div>
+      <div class="maininfoitemright" >
+        <p>
+          {{search_results.0.1}}
+        </p>
+      </div>
+    </div>
+    </div>
+    <div id="additionalInfo" style="display: none ;">
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Частота процесора</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.3}}
+          </p>
+        </div>
+      </div>
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Кількість ядер процесора</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.4}}
+          </p>
+        </div>
+      </div>
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Кількість потоків процесора</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.5}}
+          </p>
+        </div>
+      </div>
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Виробник відеокарти</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            <a href={{search_results.0.40}}>{{search_results.0.41}}</a>
+            
+          </p>
+        </div>
+      </div>
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Модель відеокарти</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.6}}
+          </p>
+        </div>
+      </div>
+      
+
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Частота відеокарти</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.8}}
+          </p>
+        </div>
+      </div>
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Кількість ядер відеокарти</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.9}}
+          </p>
+        </div>
+      </div>
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Обсяг відеопам'яті</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.10}}
+          </p>
+        </div>
+      </div>
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Обсяг оперативної пам'яті</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.11}}
+          </p>
+        </div>
+      </div>
+
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Обсяг жорсткого диску</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.13}}
+          </p>
+        </div>
+      </div>
+
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Наявніст RJ45</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.16}}
+          </p>
+        </div>
+      </div>
+
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Ємніст батареї</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.17}}
+          </p>
+        </div>
+      </div>
+
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Розмір</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.18}}x{{search_results.0.19}}x{{search_results.0.20}}
+          </p>
+        </div>
+      </div>
+
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Діагональ екрану</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.22}}
+          </p>
+        </div>
+      </div>
+
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Тип екрану </p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.24}}
+          </p>
+        </div>
+      </div>
+      <div class="maininfoitem moved-up1">
+        <div class="maininfoitemleft">
+          <p>Роздільна здатність</p>
+        </div>
+        <div class="maininfoitemright" >
+          <p>
+            {{search_results.0.23}}
+          </p>
+        </div>
+      </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+    </div>
+    </div>
   </div>
-  <button id="toggleButton5" onclick="toggleAdditionalInfo()">
+  <button id="toggleButton4" onclick="toggleAdditionalInfo()">
     Більше характеристик
   </button>
 </div>
-
 </div>
-
-<div class="container-pb-cmnt-container" >
-  <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-          <div class="panel panel-info">
-              <div class="panel-body">
-                  <textarea id="commentText" placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
-                  <button id="publishButton" class="btn btn-primary pull-right" style="background-color: rgb(47, 233, 37);" type="button">Publish</button>
-              </div>
-          </div>
-          <div id="comments">
-              <!-- Existing comments will be displayed here -->
-          </div>
-      </div>
-  </div>
-</div>
-
-
-
 <script>
     let slideIndex = 1;
+
     showSlides(slideIndex);
-    
+    let slidesLength = {{ image_results|length }}+1;
+
     function plusSlides(n) {
       slideIndex += n;
-      if (slideIndex > 6) {
+      if (slideIndex >= slidesLength) {
         slideIndex = 1;
       } else if (slideIndex < 1) {
-        slideIndex = 6;
+        slideIndex = slidesLength;
       }
       showSlides(slideIndex);
     }
-    
+
     function currentSlide(n) {
       slideIndex = n;
       showSlides(slideIndex);
     }
-    
     function showSlides(n) {
       var i;
       var slides = document.getElementsByClassName("mySlides");
@@ -319,86 +381,31 @@
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].style.color = "white";
     }
-
-    document.addEventListener("DOMContentLoaded", function () {
-            // Отримуємо елементи з DOM
-            const commentText = document.getElementById("commentText");
-            const publishButton = document.getElementById("publishButton");
-            const commentsContainer = document.getElementById("comments");
-
-            // Відображаємо існуючі коментарі з локального сховища браузера
-            const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
-            existingComments.forEach((commentText) => {
-                addCommentToUI(commentText);
-            });
-
-            // Додаємо можливість додавати нові коментарі
-            publishButton.addEventListener("click", function () {
-                const newCommentText = commentText.value;
-                if (newCommentText.length > 150) {
-                    alert("Comment is too long (max 150 characters).");
-                    return;
-                }
-                addCommentToUI(newCommentText);
-
-                // Зберігаємо новий коментар у локальному сховищі браузера
-                existingComments.push(newCommentText);
-                localStorage.setItem("comments", JSON.stringify(existingComments));
-
-                // Очищаємо текстове поле після публікації
-                commentText.value = "";
-            });
-
-            function addCommentToUI(text) {
-                const commentElement = document.createElement("div");
-                commentElement.className = "comment";
-                commentElement.innerHTML = `
-                    <img src="userbig.png" style="width:35px"></img>
-                    <span>${text}</span>
-                    <button class="delete-button" onclick="deleteComment(this)">Delete</button>
-                `;
-                commentsContainer.appendChild(commentElement);
-            }
-
-            window.deleteComment = function (button) {
-                const commentText = button.previousElementSibling.textContent;
-                const index = existingComments.indexOf(commentText);
-                if (index > -1) {
-                    existingComments.splice(index, 1);
-                    localStorage.setItem("comments", JSON.stringify(existingComments));
-                }
-
-                // Видаляємо коментар зі сторінки
-                const comment = button.parentElement;
-                commentsContainer.removeChild(comment);
-            };
-        });
     </script>
-    
     <script>
-      function toggleAdditionalInfo() {
-   var additionalInfo = document.getElementById('additionalInfo');
-   var toggleButton5 = document.getElementById('toggleButton5');
-   if (additionalInfo.style.display === 'none') {
-     additionalInfo.style.display = 'block';
-     toggleButton5.textContent = 'Приховати';
-   } else {
-     additionalInfo.style.display = 'none';
-     toggleButton5.textContent = 'Більше характеристик';
-   }
- }
-     </script>
-     <script>
-       var isAddedToWishlist = false;
- 
- function addToWishlist() {
-   if (isAddedToWishlist) {
-     alert('Товар вже додано у Wishlist');
-   } else {
-     isAddedToWishlist = true;
-     alert('Товар додано у WishList');
-   }
- }
-     </script>
+     function toggleAdditionalInfo() {
+      var additionalInfo = document.getElementById('additionalInfo');
+      var toggleButton4 = document.getElementById('toggleButton4');
+      if (additionalInfo.style.display === 'none') {
+        additionalInfo.style.display = 'block';
+        toggleButton4.textContent = 'Приховати';
+      } else {
+        additionalInfo.style.display = 'none';
+        toggleButton4.textContent = 'Більше характеристик';
+      }
+}
+    </script>
+    <script>
+      var isAddedToWishlist = false;
+
+function addToWishlist() {
+  if (isAddedToWishlist) {
+    alert('Товар вже додано у Wishlist');
+  } else {
+    isAddedToWishlist = true;
+    alert('Товар додано у WishList');
+  }
+}
+    </script>
 </body>
 </html>
