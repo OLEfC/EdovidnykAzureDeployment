@@ -30,7 +30,9 @@ def find_table_names_by_idpages(idpages):#пошук таблиць за всі�
                 UNION
                 SELECT 'gpu' AS table_name, idpage FROM gpu WHERE idpage = %s
                 UNION
-                SELECT 'device' AS table_name, idpage FROM device WHERE idpage = %s
+                SELECT 'laptop' AS table_name, idpage FROM laptop WHERE idpage = %s
+                UNION
+                SELECT 'pc' AS table_name, idpage FROM pc WHERE idpage = %s
                 UNION
                 SELECT 'networkcard' AS table_name, idpage FROM networkcard WHERE idpage = %s
                 UNION
@@ -40,7 +42,7 @@ def find_table_names_by_idpages(idpages):#пошук таблиць за всі�
                 UNION
                 SELECT 'screen' AS table_name, idpage FROM screen WHERE idpage = %s
                 """,
-                [idpage] * 7,  # Повторити idpage 7 разів для всіх запитів
+                [idpage] * 8,  # Повторити idpage 7 разів для всіх запитів
             )
             result = cursor.fetchall()
             results.append(result[0] if result else None)
@@ -96,6 +98,8 @@ def compare_view(request):
     print(tables)
     
     context = {'search_results': search_results, 'table_list': table}
+
+    print(context)
     
     return render(request, 'compare.html', context)
 

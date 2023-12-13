@@ -31,7 +31,9 @@ def find_table_names_by_idpages(idpage):
             UNION
             SELECT 'gpu' AS table_name, idpage FROM gpu WHERE idpage = %s
             UNION
-            SELECT 'device' AS table_name, idpage FROM device WHERE idpage = %s
+            SELECT 'pc' AS table_name, idpage FROM pc WHERE idpage = %s
+            UNION
+            SELECT 'laptop' AS table_name, idpage FROM laptop WHERE idpage = %s
             UNION
             SELECT 'networkcard' AS table_name, idpage FROM networkcard WHERE idpage = %s
             UNION
@@ -41,7 +43,7 @@ def find_table_names_by_idpages(idpage):
             UNION
             SELECT 'screen' AS table_name, idpage FROM screen WHERE idpage = %s
             """,
-            [idpage] * 7,  # Повторити idpage 7 разів для всіх запитів
+            [idpage] * 8,  # Повторити idpage 7 разів для всіх запитів
         )
         result = cursor.fetchall()
         results=result[0] if result else None
@@ -90,7 +92,7 @@ def search(request):
 
         # Ваш SQL-запит для пошуку в базі даних MySQL
         query = f'''
-        SELECT edovidnyk.gpu.modelgpu, edovidnyk.producer.name, edovidnyk.idpage.mainphoto,edovidnyk.gpu.idpage
+            SELECT edovidnyk.gpu.modelgpu, edovidnyk.producer.name, edovidnyk.idpage.mainphoto,edovidnyk.gpu.idpage
             FROM ((edovidnyk.gpu
             INNER JOIN edovidnyk.producer ON edovidnyk.gpu.producer = edovidnyk.producer.idproducer)
             INNER JOIN edovidnyk.idpage ON edovidnyk.gpu.idpage = edovidnyk.idpage.ididPAGE)
@@ -103,12 +105,6 @@ def search(request):
             INNER JOIN edovidnyk.idpage ON edovidnyk.cpu.idpage = edovidnyk.idpage.ididPAGE)
             WHERE edovidnyk.producer.name LIKE %s OR edovidnyk.cpu.modelcpu LIKE %s
 
-            UNION
-            SELECT edovidnyk.device.modeldevice, edovidnyk.producer.name, edovidnyk.idpage.mainphoto,edovidnyk.device.idpage
-            FROM ((edovidnyk.device
-            INNER JOIN edovidnyk.producer ON edovidnyk.device.producer = edovidnyk.producer.idproducer)
-            INNER JOIN edovidnyk.idpage ON edovidnyk.device.idpage = edovidnyk.idpage.ididPAGE)
-            WHERE edovidnyk.producer.name LIKE %s OR edovidnyk.device.modeldevice LIKE %s
 
             UNION
             SELECT edovidnyk.networkcard.modelnetworkcard, edovidnyk.producer.name, edovidnyk.idpage.mainphoto,edovidnyk.networkcard.idpage
@@ -136,9 +132,29 @@ def search(request):
             FROM ((edovidnyk.screen
             INNER JOIN edovidnyk.producer ON edovidnyk.screen.producer = edovidnyk.producer.idproducer)
             INNER JOIN edovidnyk.idpage ON edovidnyk.screen.idpage = edovidnyk.idpage.ididPAGE)
-            WHERE edovidnyk.producer.name LIKE %s OR edovidnyk.screen.modelscreen LIKE %s'''
+            WHERE edovidnyk.producer.name LIKE %s OR edovidnyk.screen.modelscreen LIKE %s
+            
+            UNION
+            SELECT edovidnyk.laptop.modellaptop, edovidnyk.producer.name, edovidnyk.idpage.mainphoto,edovidnyk.laptop.idpage
+            FROM ((edovidnyk.laptop
+            INNER JOIN edovidnyk.producer ON edovidnyk.laptop.producer = edovidnyk.producer.idproducer)
+            INNER JOIN edovidnyk.idpage ON edovidnyk.laptop.idpage = edovidnyk.idpage.ididPAGE)
+            WHERE edovidnyk.producer.name LIKE %s OR edovidnyk.laptop.modellaptop LIKE %s
+
+           
+
+
+            UNION
+            SELECT edovidnyk.pc.modelpc, edovidnyk.producer.name, edovidnyk.idpage.mainphoto,edovidnyk.pc.idpage
+            FROM ((edovidnyk.pc
+            INNER JOIN edovidnyk.producer ON edovidnyk.pc.producer = edovidnyk.producer.idproducer)
+            INNER JOIN edovidnyk.idpage ON edovidnyk.pc.idpage = edovidnyk.idpage.ididPAGE)
+            WHERE edovidnyk.producer.name LIKE %s OR edovidnyk.pc.modelpc LIKE %s
+            
+            
+            '''
         with connection.cursor() as cursor:
-            cursor.execute(query, [f'%{search_query}%'] * 14)
+            cursor.execute(query, [f'%{search_query}%'] * 16)
             search_results = cursor.fetchall()
         #if search_results:#щоб повернути іф перенеси блок редер в нього 
 
