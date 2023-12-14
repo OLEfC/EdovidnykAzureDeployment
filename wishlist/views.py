@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
-
+from django.views.decorators.csrf import csrf_exempt
 from django.db import connection
 
 
@@ -92,6 +92,7 @@ from django.shortcuts import redirect
 from django.views.decorators.http import require_POST
 
 @require_POST
+@csrf_exempt
 def delete_item(request, item_id):
     user = request.user.id
 
@@ -107,6 +108,7 @@ def delete_item(request, item_id):
 
 
 @require_POST
+@csrf_exempt
 def delete_all(request):
     user = request.user.id
 
