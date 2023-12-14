@@ -31,6 +31,7 @@
         <div style="display: flex; align-items: center;">
             <button class="addproduct" type="submit" onclick="window.location.href='/main'">+ Додати товар </button>
             <form method="post" action="{% url 'delete_all' %}">
+                {% csrf_token %}
                 <button type="submit" class="deleteproduct"><img src="{% static 'trash.png' %}">Видалити усі товари</button>
             </form>
         </div>
@@ -61,6 +62,7 @@
                
                 
                 <form method="post" action="{% url 'delete_item' result.3  %}">
+                    {% csrf_token %}
                     <button type="submit" class="deleteproductone">
                         <img src="{% static 'trash.png' %}">Видалити товар
                     </button>
