@@ -121,7 +121,7 @@ def product_detail(request, product_id):
 
             
         elif table=='pc':
-            return render(request, 'pcitem.html', {'search_results': search_results,'image_results':image})
+            return render(request, 'pcitem.html', {'search_results':  parse_data_pc(table,product_id),'image_results':image})
         
         elif table=='laptop':
             return render(request, 'laptopitem.html', {'search_results': parse_data_pc(table,product_id),'image_results':image})
