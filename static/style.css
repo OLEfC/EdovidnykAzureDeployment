@@ -958,6 +958,12 @@ margin: 0;
   position: relative; /* Add this line */
 }
 
+.demo_cursor{
+  max-height: 100%; /* Change max-height to 100% */
+  max-width: 100%; /* Change max-width to 100% */
+
+
+}
 .imgslide {
   max-height: 100%; /* Change max-height to 100% */
   max-width: 100%; /* Change max-width to 100% */
@@ -1040,6 +1046,7 @@ margin: 0;
 }
 .row{
   width: 100px;
+  height: 100px;
  
   display: flex;
  flex-direction: column;
