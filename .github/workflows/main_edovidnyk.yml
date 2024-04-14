@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'edovidnyk'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F88B5473755C4C78AE9E244E318E6DB7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_72F39856175842979E654ED6B618270E }}
